@@ -21,7 +21,7 @@ namespace BussenessAccesses
         public string Password { set; get; }
         public bool IsActive { set; get; }
  
-        public clsBussenessUsersManagement()
+        public  clsBussenessUsersManagement()
 
         {
             this.UserID = -1;

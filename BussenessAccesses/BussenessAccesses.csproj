@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusseApplicationTypesManagemnt.cs" />
     <Compile Include="BussenessPeopleManegement.cs" />
     <Compile Include="BussenessCountriesManagement.cs" />
     <Compile Include="BussenessUsersManagement.cs" />

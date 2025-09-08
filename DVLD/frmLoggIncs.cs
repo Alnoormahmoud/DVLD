@@ -35,69 +35,69 @@ namespace DVLD
                 return;
             }
 
-            _CurrentUser = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+            //_CurrentUser = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 
-            if (_CurrentUser == null)
-            {
-                MessageBox.Show("Wrong UserName/Password, Enter Correct UserName And Password. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUserName.Focus();
-            }
-            else
-            {
-                if (!_CurrentUser.IsActive)
-                {
-                    txtUserName.Focus();
-                    MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-
-                clsGlobal.CurrentUser = _CurrentUser;
-                this.Hide();
-                frmMain frm = new frmMain(this);
-                frm.ShowDialog();
-                txtUserName.Focus();
-            }
-
-            //clsBussenessUsersManagement user = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-
-            //if (user != null)
+            //if (_CurrentUser == null)
             //{
-
-            //    if (cbRememberme.Checked)
+            //    MessageBox.Show("Wrong UserName/Password, Enter Correct UserName And Password. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtUserName.Focus();
+            //}
+            //else
+            //{
+            //    if (!_CurrentUser.IsActive)
             //    {
-            //        //store username and password
-            //        clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-
-            //    }
-            //    else
-            //    {
-            //        //store empty username and password
-            //        clsGlobal.RememberUsernameAndPassword("", "");
-
-            //    }
-
-            //    //incase the user is not active
-            //    if (!user.IsActive)
-            //    {
-
             //        txtUserName.Focus();
             //        MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //        return;
             //    }
 
-            //    clsGlobal.CurrentUser = user;
+
+            //    clsGlobal.CurrentUser = _CurrentUser;
             //    this.Hide();
             //    frmMain frm = new frmMain(this);
             //    frm.ShowDialog();
-
-
-            //}
-            //else
-            //{
             //    txtUserName.Focus();
-            //    MessageBox.Show("Invalid Username/Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+
+            clsBussenessUsersManagement user = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+
+            if (user != null)
+            {
+
+                if (cbRememberme.Checked)
+                {
+                    //store username and password
+                    clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+
+                }
+                else
+                {
+                    //store empty username and password
+                    clsGlobal.RememberUsernameAndPassword("", "");
+
+                }
+
+                //incase the user is not active
+                if (!user.IsActive)
+                {
+
+                    txtUserName.Focus();
+                    MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                clsGlobal.CurrentUser = user;
+                this.Hide();
+                frmMain frm = new frmMain(this);
+                frm.ShowDialog();
+
+
+            }
+            else
+            {
+                txtUserName.Focus();
+                MessageBox.Show("Invalid Username/Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -131,16 +131,19 @@ namespace DVLD
 
         private void frmLoggIncs_Load(object sender, EventArgs e)
         {
-            //string UserName = "", Password = "";
+ 
+            string UserName = "", Password = "";
 
-            //if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
-            //{
-            //    txtUserName.Text = UserName;
-            //    txtPassword.Text = Password;
-            //    cbRememberme.Checked = true;
-            //}
-            //else
-            //    cbRememberme.Checked = false;
+            if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
+            {
+                txtUserName.Text = UserName;
+                txtPassword.Text = Password;
+                cbRememberme.Checked = true;
+            }
+            else
+                cbRememberme.Checked = false;
         }
+
+  
     }
 }

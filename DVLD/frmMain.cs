@@ -1,4 +1,5 @@
 ﻿using BussenessAccesses;
+using DVLD.Application.Application_Type;
 using DVLD.Global_Classes;
 using DVLD.Users;
 using System;
@@ -68,5 +69,15 @@ namespace DVLD
            // lblLoggedInUser.Text = "LoggedIn User: " + clsGlobal.CurrentUser.UserName;
             this.Refresh();
         }
+
+ 
+
+        private void applicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmListApplicationTypes();
+            frm.ShowDialog();
+        }
+
+    
     }
 }

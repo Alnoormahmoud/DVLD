@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="DataApplicationTypesManagement.cs" />
     <Compile Include="DataCountriesManagement.cs" />
     <Compile Include="DataPeopleManegement.cs" />
     <Compile Include="DataUseresManagement.cs" />
