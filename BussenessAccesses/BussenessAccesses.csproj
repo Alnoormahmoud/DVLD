@@ -45,6 +45,7 @@
     <Compile Include="BussenessPeopleManegement.cs" />
     <Compile Include="BussenessCountriesManagement.cs" />
     <Compile Include="BussenessUsersManagement.cs" />
+    <Compile Include="clsBussenessTestTypesManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

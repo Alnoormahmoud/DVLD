@@ -1,6 +1,7 @@
 ﻿using BussenessAccesses;
 using DVLD.Application.Application_Type;
 using DVLD.Global_Classes;
+using DVLD.Tests.Tests_Types;
 using DVLD.Users;
 using System;
  using System.Collections.Generic;
@@ -19,7 +20,6 @@ namespace DVLD
         private clsBussenessUsersManagement _CurrentUser;
 
         frmLoggIncs _frmLogin;
-
 
         public frmMain(frmLoggIncs frm)
         {
@@ -62,22 +62,23 @@ namespace DVLD
             frm.ShowDialog();
         }
  
-
         private void frmMain_Load(object sender, EventArgs e)
         {
          //   this.BackColor = Color.White;
            // lblLoggedInUser.Text = "LoggedIn User: " + clsGlobal.CurrentUser.UserName;
             this.Refresh();
         }
-
  
-
         private void applicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new frmListApplicationTypes();
             frm.ShowDialog();
         }
 
-    
+        private void manageTestsTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form  frm = new frmListTestsTypes();
+            frm.ShowDialog();
+        }
     }
 }

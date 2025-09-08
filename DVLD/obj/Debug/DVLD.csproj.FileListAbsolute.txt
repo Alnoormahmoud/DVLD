@@ -27,3 +27,5 @@ C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.pdb
 C:\Users\Al Noor\Downloads\DVLD\DVLD\bin\Debug\DVLD.exe.config
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Application.Application_Type.frmListApplicationTypes.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Application.Application_Types.frmEditApplicationType.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Tests_Types.frmListTestsTypes.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Tests_Types.frmUpdateTestTypes.resources

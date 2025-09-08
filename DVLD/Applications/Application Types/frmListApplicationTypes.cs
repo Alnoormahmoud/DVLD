@@ -20,7 +20,7 @@ namespace DVLD.Application.Application_Type
         {
             InitializeComponent();
         }
-
+        
         private void frmListApplicationTypes_Load(object sender, EventArgs e)
         {
             _ALlApplicationTypesManagemnt = clsBusseApplicationTypesManagemnt.GetApplicationTtpes();
@@ -29,7 +29,7 @@ namespace DVLD.Application.Application_Type
             lblRecords.Text = dgvUsers.Rows.Count.ToString();
             if (dgvUsers.Rows.Count > 0)
             {
-                dgvUsers.Columns[0].HeaderText = "Type ID";
+                dgvUsers.Columns[0].HeaderText = "Application Type ID";
                 dgvUsers.Columns[0].Width = 250;
 
                 dgvUsers.Columns[1].HeaderText = "Type Title";
