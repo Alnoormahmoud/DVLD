@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace BussenessAccesses
 {
-    public class clsBussenessTestTypesManagement
+    public class clsBussenessTestTypes
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
         public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3 };
-        public clsBussenessTestTypesManagement.enTestType TestID { set; get; }
+        public clsBussenessTestTypes.enTestType TestID { set; get; }
         public string TestTile { set; get; }
         public string TestDescription { set; get; }
         public decimal TestFees { set; get; }
-        public clsBussenessTestTypesManagement(clsBussenessTestTypesManagement.enTestType TestID, string TestTile, string TestDescription, decimal TestFees)
+        public clsBussenessTestTypes(clsBussenessTestTypes.enTestType TestID, string TestTile, string TestDescription, decimal TestFees)
         {
             this.TestID = TestID;
             this.TestTile = TestTile;
@@ -25,7 +25,7 @@ namespace BussenessAccesses
             this.TestFees = TestFees;
             Mode = enMode.Update;
         }
-        public clsBussenessTestTypesManagement()
+        public clsBussenessTestTypes()
         {
             this.TestID = enTestType.VisionTest;
             this.TestTile = "";
@@ -35,17 +35,17 @@ namespace BussenessAccesses
         }
         public static DataTable GetAllTestsTypes()
         {
-            return clsDataTestsTypesManagement.GetAllTestsTypes();
+            return DataTestsTypes.GetAllTestsTypes();
         }
-        public static clsBussenessTestTypesManagement GetTestTypeByID(clsBussenessTestTypesManagement.enTestType TestTypeID)
+        public static clsBussenessTestTypes GetTestTypeByID(clsBussenessTestTypes.enTestType TestTypeID)
         {
             string Title = "";
             string Description = "";
             decimal Fees = 0;
 
-            if ( clsDataTestsTypesManagement.GetTestInfoByID((int) TestTypeID, ref Title, ref Description, ref Fees))
+            if ( DataTestsTypes.GetTestInfoByID((int) TestTypeID, ref Title, ref Description, ref Fees))
             {
-                return new clsBussenessTestTypesManagement(TestTypeID, Title, Description, Fees);
+                return new clsBussenessTestTypes(TestTypeID, Title, Description, Fees);
             }
             return null;
         }
@@ -53,14 +53,14 @@ namespace BussenessAccesses
         {
             //call DataAccess Layer 
 
-            this.TestID = (enTestType) clsDataTestsTypesManagement.AddNewTestType(this.TestTile,this.TestDescription, this.TestFees);
+            this.TestID = (enTestType) DataTestsTypes.AddNewTestType(this.TestTile,this.TestDescription, this.TestFees);
 
 
             return (this.TestTile != "");
         }
         private bool _UpdateTestType()
         {
-            return clsDataTestsTypesManagement.UpdateTestsType((int) this.TestID, this.TestTile,this.TestDescription, this.TestFees);
+            return DataTestsTypes.UpdateTestsType((int) this.TestID, this.TestTile,this.TestDescription, this.TestFees);
         }
         public bool Save()
         {

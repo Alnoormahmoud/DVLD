@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BussenessAccesses
 {
-    public class clsBusseApplicationTypesManagemnt
+    public class clsBussenessApplicationTypes
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
@@ -18,7 +18,7 @@ namespace BussenessAccesses
         public string Title { set; get; }
         public decimal Fees { set; get; }
 
-        public clsBusseApplicationTypesManagemnt(int Id, string Title, decimal Fees)
+        public clsBussenessApplicationTypes(int Id, string Title, decimal Fees)
         {
             this.Id = Id;
             this.Title = Title;
@@ -26,7 +26,7 @@ namespace BussenessAccesses
             Mode = enMode.Update;
         }    
         
-        public clsBusseApplicationTypesManagemnt()
+        public clsBussenessApplicationTypes()
         {
             this.Id = -1;
             this.Title = "";
@@ -39,17 +39,28 @@ namespace BussenessAccesses
             return  clsDataApplicationTypesManagement.GetApplicationTtpes();
         }        
         
-        public static clsBusseApplicationTypesManagemnt GetApplicationTypeByApplicationTypeID(int TypedID)
+        public static clsBussenessApplicationTypes GetApplicationTypeByApplicationTypeID(int TypedID)
         {
             string Title = "";
             decimal Fees = 0;
             if( clsDataApplicationTypesManagement.GetApplicationInfoByApplicationTypeID(TypedID,ref Title,ref Fees))
             {
-                return new clsBusseApplicationTypesManagemnt(TypedID, Title, Fees); 
+                return new clsBussenessApplicationTypes(TypedID, Title, Fees); 
             }
             return null;
         }
 
+        public static clsBussenessApplicationTypes Find(int ID)
+        {
+            string Title = ""; decimal  Fees = 0;
+
+            if (clsDataApplicationTypesManagement.GetApplicationTypeInfoByID((int)ID, ref Title, ref Fees))
+
+                return new clsBussenessApplicationTypes(ID, Title, Fees);
+            else
+                return null;
+
+        }
         private bool _AddNewApplicationType()
         {
             //call DataAccess Layer 
@@ -59,7 +70,6 @@ namespace BussenessAccesses
 
             return (this.Id != -1);
         }
-
 
         private bool _UpdateApplicationType()
         {

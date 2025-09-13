@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusseApplicationTypesManagemnt.cs" />
-    <Compile Include="BussenessPeopleManegement.cs" />
-    <Compile Include="BussenessCountriesManagement.cs" />
-    <Compile Include="BussenessUsersManagement.cs" />
-    <Compile Include="clsBussenessTestTypesManagement.cs" />
+    <Compile Include="BussenessApplicationTypes.cs" />
+    <Compile Include="BussenessLicenseClasses.cs" />
+    <Compile Include="BussenessLocalDrivingLicenseApplications.cs" />
+    <Compile Include="BussenessPeoplecs.cs" />
+    <Compile Include="BussenessCountries.cs" />
+    <Compile Include="BussenessUsers.cs" />
+    <Compile Include="BussenessApplication.cs" />
+    <Compile Include="clsBussenessTestTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

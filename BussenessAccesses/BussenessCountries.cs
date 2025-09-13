@@ -9,13 +9,13 @@ using DataAccesses;
 
 namespace BussenessAccesses
 {
-    public class clsBuessenessCountriesManagement
+    public class clsBussenessCountriesManagement
     {
 
         public int ID { set; get; }
         public string CountryName { set; get; }
 
-        public clsBuessenessCountriesManagement()
+        public clsBussenessCountriesManagement()
 
         {
             this.ID = -1;
@@ -23,33 +23,33 @@ namespace BussenessAccesses
 
         }
 
-        private clsBuessenessCountriesManagement(int ID, string CountryName)
+        private clsBussenessCountriesManagement(int ID, string CountryName)
 
         {
             this.ID = ID;
             this.CountryName = CountryName;
         }
 
-        public static clsBuessenessCountriesManagement Find(int ID)
+        public static clsBussenessCountriesManagement Find(int ID)
         {
             string CountryName = "";
 
             if (clsDataCountriesManagement.GetCountryInfoByID(ID, ref CountryName))
 
-                return new clsBuessenessCountriesManagement(ID, CountryName);
+                return new clsBussenessCountriesManagement(ID, CountryName);
             else
                 return null;
 
         }
 
-        public static clsBuessenessCountriesManagement Find(string CountryName)
+        public static clsBussenessCountriesManagement Find(string CountryName)
         {
 
             int ID = -1;
 
             if (clsDataCountriesManagement.GetCountryInfoByName(CountryName, ref ID))
 
-                return new clsBuessenessCountriesManagement(ID, CountryName);
+                return new clsBussenessCountriesManagement(ID, CountryName);
             else
                 return null;
 

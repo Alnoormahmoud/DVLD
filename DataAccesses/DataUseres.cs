@@ -15,7 +15,7 @@ namespace DataAccesses
         {
 
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
  
             string query = @"SELECT  Users.UserID, Users.PersonID,
@@ -59,7 +59,7 @@ namespace DataAccesses
         {
             int UserId = -1;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"INSERT INTO Users (PersonId,UserName,Password,IsActive) 
                              VALUES (@PersonId,@UserName,@Password,@IsActive);
@@ -104,7 +104,7 @@ namespace DataAccesses
         {
 
             int rowsAffected = 0;
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"Update  Users  
                             set UserName = @UserName,
@@ -143,7 +143,7 @@ namespace DataAccesses
         {
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"Delete Users 
                                 where UserID = @UserId";
@@ -177,7 +177,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM Users WHERE PersonId = @PersonId";
 
@@ -210,7 +210,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM Users WHERE UserID = @UserID";
 
@@ -243,7 +243,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM Users WHERE UserName = @UserName";
 
@@ -276,7 +276,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Users WHERE UserID = @UserId";
 
@@ -326,7 +326,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Users WHERE PersonID = @PersonID";
 
@@ -377,7 +377,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Users WHERE UserName = @UserName and Password=@Password;";
 

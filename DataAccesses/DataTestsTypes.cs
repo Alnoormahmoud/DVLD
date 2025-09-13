@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace DataAccesses
 {
-    public class clsDataApplicationTypesManagement
+    public class DataTestsTypes
     {
-        public static DataTable GetApplicationTtpes()
+        public static DataTable GetAllTestsTypes()
         {
 
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
 
-            string query = @"SELECT  * from ApplicationTypes";
+            string query = @"SELECT * from TestTypes";
 
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -52,17 +52,17 @@ namespace DataAccesses
 
         }
 
-        public static bool GetApplicationInfoByApplicationTypeID(int ApplicationTypeID, ref string Title, ref decimal Fees)
+        public static bool GetTestInfoByID(int TestTypeID, ref string TestTypeTitle, ref string TestTypeDescription, ref decimal Fees)
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
-            string query = "SELECT * FROM ApplicationTypes WHERE ApplicationTypeID = @ApplicationTypeID";
+            string query = "SELECT * FROM TestTypes WHERE TestTypeID = @TestTypeID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {
@@ -74,9 +74,10 @@ namespace DataAccesses
                     // The record was found
                     isFound = true;
 
-                    Title = (string)reader["ApplicationTypeTitle"];
-                    Fees = (decimal)reader["ApplicationFees"];
-       
+                    TestTypeTitle = (string)reader["TestTypeTitle"];
+                    TestTypeDescription = (string)reader["TestTypeDescription"];
+                    Fees = (decimal)reader["TestTypeFees"];
+
                 }
                 else
                 {
@@ -101,15 +102,18 @@ namespace DataAccesses
             return isFound;
         }
 
-        public static bool UpdateApplicationType(int ApplicationTypeID, string Title, decimal Fees)
+        public static bool UpdateTestsType(int TestTypeID, string TestTypeTitle, string TestTypeDescription, decimal TestTypeFees)
         {
             bool isUpdated = false;
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
-            string query = "UPDATE ApplicationTypes SET ApplicationTypeTitle = @Title, ApplicationFees = @Fees WHERE ApplicationTypeID = @ApplicationTypeID";
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
+            string query = "UPDATE TestTypes SET TestTypeTitle = @TestTypeTitle, TestTypeFees = @TestTypeFees, TestTypeDescription = @TestTypeDescription WHERE TestTypeID = @TestTypeID";
+
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            command.Parameters.AddWithValue("@Title", Title);
-            command.Parameters.AddWithValue("@Fees", Fees);
+
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
+            command.Parameters.AddWithValue("@TestTypeFees", TestTypeFees);
+            command.Parameters.AddWithValue("@TestTypeDescription", TestTypeDescription);
             try
             {
                 connection.Open();
@@ -137,21 +141,22 @@ namespace DataAccesses
             return isUpdated;
         }
 
-        public static int AddNewApplicationType(string Title, decimal Fees)
+        public static int AddNewTestType(string TestTypeTitle,string TestTypeDescription, decimal TestTypeFees)
         {
             int ApplicationTypeID = -1;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
-            string query = @"Insert Into ApplicationTypes (ApplicationTypeTitle,ApplicationFees)
-                            Values (@Title,@Fees)
+            string query = @"Insert Into TestTypes (TestTypeTitle,TestTypeDescription,TestTypeFees)
+                            Values (@Title,@Fees,TestTypeFees)
                             
                             SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationTypeTitle", Title);
-            command.Parameters.AddWithValue("@ApplicationFees", Fees);
+            command.Parameters.AddWithValue("@ApplicationTypeTitle", TestTypeTitle);
+            command.Parameters.AddWithValue("@TestTypeDescription", TestTypeDescription);
+            command.Parameters.AddWithValue("@TestTypeFees", TestTypeFees);
 
             try
             {
@@ -180,7 +185,6 @@ namespace DataAccesses
             return ApplicationTypeID;
 
         }
-
     }
 
 }

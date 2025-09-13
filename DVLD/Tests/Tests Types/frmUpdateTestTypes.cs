@@ -13,11 +13,11 @@ namespace DVLD.Tests.Tests_Types
 {
     public partial class frmUpdateTestTypes : Form
     {
-         private clsBussenessTestTypesManagement.enTestType _TestTypeID = clsBussenessTestTypesManagement.enTestType.VisionTest;
+         private clsBussenessTestTypes.enTestType _TestTypeID = clsBussenessTestTypes.enTestType.VisionTest;
 
-        private clsBussenessTestTypesManagement _Test;
+        private clsBussenessTestTypes _Test;
 
-        public frmUpdateTestTypes(clsBussenessTestTypesManagement.enTestType TestTypeID)
+        public frmUpdateTestTypes(clsBussenessTestTypes.enTestType TestTypeID)
         {
             InitializeComponent();
             _TestTypeID = TestTypeID;
@@ -25,7 +25,7 @@ namespace DVLD.Tests.Tests_Types
         
         private void frmUpdateTestTypes_Load(object sender, EventArgs e)
         {
-            _Test = clsBussenessTestTypesManagement.GetTestTypeByID(_TestTypeID);
+            _Test = clsBussenessTestTypes.GetTestTypeByID(_TestTypeID);
 
             if (_Test != null)
             {

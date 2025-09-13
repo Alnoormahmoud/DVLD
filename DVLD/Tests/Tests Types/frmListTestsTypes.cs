@@ -25,7 +25,7 @@ namespace DVLD.Tests.Tests_Types
 
         private void frmListTestsTypes_Load(object sender, EventArgs e)
         {
-            _AllTestsTypes = clsBussenessTestTypesManagement.GetAllTestsTypes();
+            _AllTestsTypes = clsBussenessTestTypes.GetAllTestsTypes();
 
             dgvUsers.DataSource = _AllTestsTypes;
             lblRecords.Text = dgvUsers.Rows.Count.ToString();
@@ -47,14 +47,14 @@ namespace DVLD.Tests.Tests_Types
  
         private void editTypeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Form form = new frmUpdateTestTypes((clsBussenessTestTypesManagement.enTestType)dgvUsers.CurrentRow.Cells[0].Value);
+            Form form = new frmUpdateTestTypes((clsBussenessTestTypes.enTestType)dgvUsers.CurrentRow.Cells[0].Value);
             form.ShowDialog();
             frmListTestsTypes_Load(null, null);
         }
 
         private void dgvUsers_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Form frm = new frmUpdateTestTypes((clsBussenessTestTypesManagement.enTestType)dgvUsers.CurrentRow.Cells[0].Value);
+            Form frm = new frmUpdateTestTypes((clsBussenessTestTypes.enTestType)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
             frmListTestsTypes_Load(null, null);
         }

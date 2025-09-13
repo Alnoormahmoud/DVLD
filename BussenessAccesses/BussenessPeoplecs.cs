@@ -32,7 +32,7 @@ namespace BussenessAccesses
         public string Email { set; get; }
         public int NationalityCountryID { set; get; }
 
-        public clsBuessenessCountriesManagement CountryInfo;
+        public clsBussenessCountriesManagement CountryInfo;
 
         private string _ImagePath;
 
@@ -78,7 +78,7 @@ namespace BussenessAccesses
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
             this.ImagePath = ImagePath;
-            this.CountryInfo = clsBuessenessCountriesManagement.Find(NationalityCountryID);
+            this.CountryInfo = clsBussenessCountriesManagement.Find(NationalityCountryID);
             Mode = enMode.Update;
         }
 

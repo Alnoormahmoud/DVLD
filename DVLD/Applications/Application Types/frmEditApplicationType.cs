@@ -14,7 +14,7 @@ namespace DVLD.Application.Application_Types
     public partial class frmEditApplicationType : Form
     {
         private int _ID;
-        private clsBusseApplicationTypesManagemnt _Application;
+        private clsBussenessApplicationTypes _Application;
 
         public frmEditApplicationType(int id)
         {
@@ -24,7 +24,7 @@ namespace DVLD.Application.Application_Types
 
         private void frmEditApplicationType_Load(object sender, EventArgs e)
         {
-            _Application =  clsBusseApplicationTypesManagemnt.GetApplicationTypeByApplicationTypeID(_ID);
+            _Application =  clsBussenessApplicationTypes.GetApplicationTypeByApplicationTypeID(_ID);
             if (_Application != null)
             {
                 lblId.Text = _ID.ToString();

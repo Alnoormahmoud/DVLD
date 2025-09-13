@@ -11,7 +11,7 @@ namespace DataAccesses
         {
 
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"SELECT People.PersonID, People.NationalNo,
               People.FirstName, People.SecondName, People.ThirdName, People.LastName,
@@ -66,7 +66,7 @@ namespace DataAccesses
         {
              int PersonID = -1;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"INSERT INTO People (NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,
 Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
@@ -142,7 +142,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
         {
 
             int rowsAffected = 0;
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"Update  People  
                             set NationalNo = @NationalNo,
@@ -205,7 +205,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
 
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"Delete People 
                                 where PersonID = @PersonId";
@@ -242,7 +242,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM People WHERE PersonID = @PersonID";
 
@@ -328,7 +328,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM People WHERE NationalNo = @NationalNo";
 
@@ -412,7 +412,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM People WHERE NationalNo = @NationalNo";
 
@@ -445,7 +445,7 @@ Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM People WHERE PersonId = @PersonId";
 

@@ -96,7 +96,7 @@ namespace DVLD
 
             lblRemove.Visible = (_Person.ImagePath != "");
 
-            cbCountries.SelectedIndex = cbCountries.FindString(clsBuessenessCountriesManagement.Find(_Person.NationalityCountryID).CountryName);
+            cbCountries.SelectedIndex = cbCountries.FindString(clsBussenessCountriesManagement.Find(_Person.NationalityCountryID).CountryName);
 
         }
  
@@ -113,7 +113,7 @@ namespace DVLD
  
         private void FillCountriesInCompoBox()
         {
-            DataTable dataTable = clsBuessenessCountriesManagement.GetAllCountries();
+            DataTable dataTable = clsBussenessCountriesManagement.GetAllCountries();
 
             foreach (DataRow row in dataTable.Rows)
             {
@@ -209,7 +209,7 @@ namespace DVLD
                 case enMode.Add:
 
 
-                    int CountryId = clsBuessenessCountriesManagement.Find(cbCountries.Text).ID ;
+                    int CountryId = clsBussenessCountriesManagement.Find(cbCountries.Text).ID ;
 
                     _Person.FirstName = txtFirst.Text;
                     _Person.SecondName = txtSecond.Text;
@@ -255,7 +255,7 @@ namespace DVLD
                 case enMode.Update:
                     {
              
-                        int CountrID = clsBuessenessCountriesManagement.Find(cbCountries.Text).ID;
+                        int CountrID = clsBussenessCountriesManagement.Find(cbCountries.Text).ID;
 
                         int ID = int.Parse(lblId.Text);
                         int _Gender = rbMale.Checked ? 0 : 1;

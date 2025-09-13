@@ -14,7 +14,7 @@ namespace DataAccesses
         {
 
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Countries order by CountryName";
 
@@ -55,7 +55,7 @@ namespace DataAccesses
 
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = @"Delete Countries 
                                 where CountryID = @CountryID";
@@ -90,7 +90,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM Countries WHERE CountryID = @CountryID";
 
@@ -125,7 +125,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Countries WHERE CountryName = @CountryName";
 
@@ -176,7 +176,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT * FROM Countries WHERE CountryID = @CountryID";
 
@@ -227,7 +227,7 @@ namespace DataAccesses
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataSettingd.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
             string query = "SELECT Found=1 FROM Countries WHERE CountryName = @CountryName";
 

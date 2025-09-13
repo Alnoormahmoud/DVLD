@@ -23,7 +23,7 @@ namespace DVLD.Application.Application_Type
         
         private void frmListApplicationTypes_Load(object sender, EventArgs e)
         {
-            _ALlApplicationTypesManagemnt = clsBusseApplicationTypesManagemnt.GetApplicationTtpes();
+            _ALlApplicationTypesManagemnt = clsBussenessApplicationTypes.GetApplicationTtpes();
 
             dgvUsers.DataSource = _ALlApplicationTypesManagemnt;
             lblRecords.Text = dgvUsers.Rows.Count.ToString();

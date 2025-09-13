@@ -49,12 +49,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsDataTestsTypesManagement.cs" />
+    <Compile Include="DataTestsTypes.cs" />
     <Compile Include="ConnectionString.cs" />
-    <Compile Include="DataApplicationTypesManagement.cs" />
+    <Compile Include="DataLicenseClasses.cs" />
+    <Compile Include="DataApplicationTypes.cs" />
     <Compile Include="DataCountriesManagement.cs" />
-    <Compile Include="DataPeopleManegement.cs" />
-    <Compile Include="DataUseresManagement.cs" />
+    <Compile Include="DataApplications.cs" />
+    <Compile Include="DataLocalDrivingLicenseApplications.cs" />
+    <Compile Include="DataPeople.cs" />
+    <Compile Include="DataUseres.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

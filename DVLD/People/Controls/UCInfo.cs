@@ -102,7 +102,7 @@ namespace DVLD
             else if (gender == 1)
                 lblGender.Text = "FeMale"; 
 
-            lblCountry.Text = _Person.CountryInfo.CountryName.ToString();// (clsBuessenessCountriesManagement.Find(_Person.CountryID).CountryName);
+            lblCountry.Text = _Person.CountryInfo.CountryName.ToString();// (clsBussenessCountriesManagement.Find(_Person.CountryID).CountryName);
             _LoadPersonImage();
         }
 
@@ -134,3 +134,15 @@ namespace DVLD
    
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
