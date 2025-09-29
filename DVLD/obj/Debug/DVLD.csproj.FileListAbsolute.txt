@@ -31,3 +31,11 @@ C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Tests_Types.frmListTes
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Tests_Types.frmUpdateTestTypes.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.LocalDrivingLicense.frmListLocalDrivingLicenseApplications.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.LocalDrivingLicense.frmAddUpdateLocalDrivingLicsense.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.frmListTestAppointments.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Controls.ucScheduleTest.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.LocalDrivingLicense.ucDrivingLicenseApplicationInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.LocalDrivingLicense.frmLDLApplicationInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.Controls.ucApplicationBasicInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.frmScheduleTest.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Controls.ucScheduledTest.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.frmTakeTest.resources

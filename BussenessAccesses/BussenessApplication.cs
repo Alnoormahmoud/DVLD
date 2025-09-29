@@ -26,6 +26,7 @@ namespace BussenessAccesses
         public int ApplicationTypeID { set; get; }
 
         public clsBussenessApplicationTypes ApplicationTypeInfo;
+
         public enApplicationStatus ApplicationStatus { set; get; }
         public DateTime LastStatusDate { set; get; }
         public int CreatedByUserID { set; get; }
@@ -92,7 +93,7 @@ namespace BussenessAccesses
             Mode = enMode.Update;
         }
 
-        static public DataTable GetAllLDLApplicatinos()
+        static  public DataTable GetAllApplicatinos()
         {
             return clsDataApplications.GetAllApplications();
         }
@@ -120,6 +121,16 @@ namespace BussenessAccesses
                 return null;
         }
 
+        public static bool Cancle(int ApplicationID)
+        {
+            return clsDataApplications.ChangeApplicationStatus(ApplicationID, (byte)enApplicationStatus.Cancelled, DateTime.Now);
+        }
+
+        public bool SetComplete()
+
+        {
+            return clsDataApplications.ChangeApplicationStatus(ApplicationID, 3, DateTime.Now);
+        }
         private bool _AddNewPerson()
         {
             //call DataAccess Layer 
@@ -136,6 +147,12 @@ namespace BussenessAccesses
 
             return clsDataApplications.UpdateApplication(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate, this.ApplicationTypeID,
                (byte) this.ApplicationStatus, this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
+        }
+
+        public bool DeleteApplication()
+        {
+            //call DataAccess Layer 
+            return clsDataApplications.DeleteApplication(this.ApplicationID);
         }
 
         public bool Save()

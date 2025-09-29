@@ -3,19 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{922A31FA-E142-48A7-BA2C-DEB8CFEDF54C}|..\\DataAccesses\\DataAccesses.csproj|c:\\users\\al noor\\downloads\\dvld\\dataaccesses\\datalocaldrivinglicenseapplications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\al noor\\downloads\\dvld\\dvld\\applications\\localdrivinglicense\\frmlistlocaldrivinglicenseapplications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:applications\\localdrivinglicense\\frmlistlocaldrivinglicenseapplications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\al noor\\downloads\\dvld\\dvld\\applications\\localdrivinglicense\\frmaddupdatelocaldrivinglicsense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:applications\\localdrivinglicense\\frmaddupdatelocaldrivinglicsense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\al noor\\downloads\\dvld\\dvld\\applications\\localdrivinglicense\\frmaddupdatelocaldrivinglicsense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:applications\\localdrivinglicense\\frmaddupdatelocaldrivinglicsense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\al noor\\downloads\\dvld\\dvld\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,54 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmListLocalDrivingLicenseApplications.cs",
-              "DocumentMoniker": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmListLocalDrivingLicenseApplications.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicense\\frmListLocalDrivingLicenseApplications.cs",
-              "ToolTip": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmListLocalDrivingLicenseApplications.cs",
-              "RelativeToolTip": "Applications\\LocalDrivingLicense\\frmListLocalDrivingLicenseApplications.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T11:41:51.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DataLocalDrivingLicenseApplications.cs",
-              "DocumentMoniker": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DataAccesses\\DataLocalDrivingLicenseApplications.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesses\\DataLocalDrivingLicenseApplications.cs",
-              "ToolTip": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DataAccesses\\DataLocalDrivingLicenseApplications.cs*",
-              "RelativeToolTip": "..\\DataAccesses\\DataLocalDrivingLicenseApplications.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAJAAAAAAAAAA==",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:04:28.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmAddUpdateLocalDrivingLicsense.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "ToolTip": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs [Design]",
-              "RelativeToolTip": "Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T06:55:57.366Z",
+              "WhenOpened": "2025-09-29T10:53:42.223Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAddUpdateLocalDrivingLicsense.cs",
-              "DocumentMoniker": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "ToolTip": "C:\\Users\\Al Noor\\Downloads\\DVLD\\DVLD\\Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "RelativeToolTip": "Applications\\LocalDrivingLicense\\frmAddUpdateLocalDrivingLicsense.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAEYAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T07:34:05.119Z",
-              "EditorCaption": ""
             }
           ]
         }

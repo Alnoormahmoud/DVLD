@@ -30,7 +30,7 @@ namespace DVLD.Applications.LocalDrivingLicense
             _Mode = enMode.AddNew;
         }
 
-        public frmAddUpdateLocalDrivingLicsense(  int LDLApplicationID)
+        public frmAddUpdateLocalDrivingLicsense( int LDLApplicationID)
         {
             InitializeComponent();
             _Mode = enMode.Update;
@@ -86,6 +86,16 @@ namespace DVLD.Applications.LocalDrivingLicense
             {
                 MessageBox.Show("Choose another License Class, the selected Person Already have an active application for the selected class with id = " + ActiveApplicationID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbLicenseClass.Focus();
+                return;
+            }
+
+            // check if the person is old enough for the selected driving class
+            byte MinAllowedAge = clsBussenessLicenseClasses.Find(LicenseClassID).MinimumAllowedAge;
+
+            if (MinAllowedAge > (DateTime.Now.Year - clsBussenessPeopleManegement.Find(_SelectedPersoniD).DateOfBirth.Year))
+            {
+                MessageBox.Show($"Person is not allowed for this Driving License Class, it requires a {MinAllowedAge}" +
+                    $" years old and above", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

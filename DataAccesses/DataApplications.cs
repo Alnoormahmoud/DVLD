@@ -39,7 +39,7 @@ namespace DataAccesses
                     ApplicationTypeID = (int)reader["ApplicationTypeID"];
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)reader["LastStatusDate"];
-                    PaidFees = (int) reader["PaidFees"];
+                    PaidFees = (decimal) reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
 
 
@@ -72,7 +72,7 @@ namespace DataAccesses
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
-            string query = @"SELECT * FROM LocalDrivingLicenseApplications_View";
+            string query = @"SELECT * FROM Applications";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -168,15 +168,11 @@ namespace DataAccesses
                             set ApplicantPersonID = @ApplicantPersonID,
                                 ApplicationDate = @ApplicationDate, 
                                 ApplicationTypeID = @ApplicationTypeID, 
-                                ThirdName = @ThirdName, 
-                                LastName = @LastName, 
-                                Email = @Email, 
-                                Gendor = @Gender, 
-                                Phone = @Phone, 
-                                Address = @Address, 
-                                DateOfBirth = @DateOfBirth,
-                                NationalityCountryID = @NationalityCountryID,
-                                ImagePath =@ImagePath
+                                ApplicationStatus = @ApplicationStatus, 
+                                LastStatusDate = @LastStatusDate, 
+                                PaidFees = @PaidFees, 
+                                CreatedByUserID = @CreatedByUserID
+                     
                                 where ApplicationID = @ApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -211,6 +207,43 @@ namespace DataAccesses
             return (rowsAffected > 0);
         }
 
+        public static bool ChangeApplicationStatus(int ApplicationID, int ApplicationStatus, DateTime Date)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
+
+            string query = @"Update  Applications  
+                            set ApplicationStatus = @ApplicationStatus,                          
+                                LastStatusDate = @LastStatusDate      where ApplicationID = @ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@LastStatusDate", Date);
+
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+ 
+        }
         public static bool IsApplicationExistById(int ApplicationID)
         {
             bool isFound = false;
@@ -288,6 +321,32 @@ namespace DataAccesses
 
             return ActiveApplicationID;
         }
+
+        public static bool DeleteApplication(int ApplicationID)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
+            string query = @" DELETE FROM Applications WHERE ApplicationID = @ApplicationID"; 
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (rowsAffected > 0);
+        }
+
 
     }
 }

@@ -170,7 +170,7 @@
             // 
             // pictureBox10
             // 
-             this.pictureBox10.Location = new System.Drawing.Point(316, 204);
+            this.pictureBox10.Location = new System.Drawing.Point(316, 204);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(79, 36);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -244,7 +244,7 @@
             // 
             // pictureBox6
             // 
-             this.pictureBox6.Location = new System.Drawing.Point(157, 128);
+            this.pictureBox6.Location = new System.Drawing.Point(157, 128);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(79, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -253,7 +253,7 @@
             // 
             // pictureBox5
             // 
-             this.pictureBox5.Location = new System.Drawing.Point(157, 204);
+            this.pictureBox5.Location = new System.Drawing.Point(157, 204);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(79, 36);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -411,7 +411,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(401, 451);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(201, 56);
@@ -573,7 +573,7 @@
             // 
             // pictureBox1
             // 
-             this.pictureBox1.Location = new System.Drawing.Point(169, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(169, 97);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

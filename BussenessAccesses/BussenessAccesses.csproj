@@ -46,9 +46,11 @@
     <Compile Include="BussenessLocalDrivingLicenseApplications.cs" />
     <Compile Include="BussenessPeoplecs.cs" />
     <Compile Include="BussenessCountries.cs" />
+    <Compile Include="BussenessTests.cs" />
     <Compile Include="BussenessUsers.cs" />
     <Compile Include="BussenessApplication.cs" />
     <Compile Include="clsBussenessTestTypes.cs" />
+    <Compile Include="clsBussenssTestAppointments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

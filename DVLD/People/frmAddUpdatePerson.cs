@@ -78,7 +78,12 @@ namespace DVLD
             txtEmail.Text = _Person.Email;
             txtPhone.Text = _Person.Phone;
             txtAdderess.Text = _Person.Address;
-            dtpDateOfBirth.Value = _Person.DateOfBirth;
+
+            if(_Person.DateOfBirth > dtpDateOfBirth.MaxDate)
+                dtpDateOfBirth.MaxDate = _Person.DateOfBirth;
+ 
+
+                dtpDateOfBirth.Value = _Person.DateOfBirth;
 
             txtNationalNo.Text = _Person.NationalNo.ToString();
 

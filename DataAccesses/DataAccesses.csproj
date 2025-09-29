@@ -49,6 +49,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDataTestAppointments.cs" />
+    <Compile Include="DataTests.cs" />
     <Compile Include="DataTestsTypes.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DataLicenseClasses.cs" />

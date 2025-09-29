@@ -3,6 +3,7 @@ using DataAccesses;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,15 +42,31 @@ namespace BussenessAccesses
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
             this.LicenseClassID = LicenseClassId;
-  
+
             LicenseClassInfo = clsBussenessLicenseClasses.Find(LicenseClassId);
 
             Mode = enMode.Update;
         }
 
-        public DataTable GetAllLDLApplications()
+        public static DataTable GetAllLDLApplications()
         {
             return clsDataLocalDrivingLicenseApplications.GetAllLDLApplications();
+        }
+        public bool IsThereAnActiveScheduledTest(clsBussenessTestTypes.enTestType TestTypeID)
+        {
+            return clsDataLocalDrivingLicenseApplications.IsThereAnActiveScheduledTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
+        }
+
+        public bool DoesPassTestType(clsBussenessTestTypes.enTestType TestTypeID)
+
+        {
+            return clsDataLocalDrivingLicenseApplications.DoesPassTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
+        }
+
+        public bool DoesAttendTestType(clsBussenessTestTypes.enTestType TestTypeID)
+
+        {
+            return clsDataLocalDrivingLicenseApplications.DoesAttendTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
         public static clsBussenessLocBalDrivingLicenseApplications FindLDLApplicationBYID(int LDLApplicationID)
@@ -75,11 +92,64 @@ namespace BussenessAccesses
                 return null;
             }
 
-        }  
+        }
+        public static clsBussenessLocBalDrivingLicenseApplications FindByApplicationID(int ApplicationID)
+        {
+            // 
+            int LocalDrivingLicenseApplicationID = -1, LicenseClassID = -1;
 
+            if (clsDataLocalDrivingLicenseApplications.GetLDLApplicationInfoByApplicationID(ApplicationID, ref LocalDrivingLicenseApplicationID, ref LicenseClassID))
+            {
+                clsBussenessApplications Application = clsBussenessApplications.FindBaseApplication(ApplicationID);
+
+                if (Application != null)
+                {
+                    return new clsBussenessLocBalDrivingLicenseApplications(
+                LocalDrivingLicenseApplicationID, Application.ApplicationID,
+                Application.ApplicantPersonID,
+                                 Application.ApplicationDate, Application.ApplicationTypeID,
+                                (enApplicationStatus)Application.ApplicationStatus, Application.LastStatusDate,
+                                 Application.PaidFees, Application.CreatedByUserID, LicenseClassID);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
         public bool IsLDLApplicationExsistBYID(int LDLApplicationID)
         {
             return clsDataLocalDrivingLicenseApplications.IsLDLApplicationExistById(LDLApplicationID);
+        }
+
+        public byte TotalTrialsPerTest(clsBussenessTestTypes.enTestType TestTypeID)
+        {
+            return clsDataLocalDrivingLicenseApplications.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
+        }
+        public bool DeleteLDLApplication()
+        {
+
+            //call DataAccess Layer 
+            if (clsDataLocalDrivingLicenseApplications.DeleteLDLApplication(this.LocalDrivingLicenseApplicationID))
+            {
+                if (base.DeleteApplication() == false)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+
+            }
         }
 
         private bool  _AddNewLDLApplication()
@@ -95,8 +165,19 @@ namespace BussenessAccesses
             return clsDataLocalDrivingLicenseApplications.UpdateLDLApplicatoin(this.LocalDrivingLicenseApplicationID, this.ApplicationID, this.LicenseClassID);
         }
 
+        public bool IsLicenseIssued()
+        {
+            return (GetActiveLicenseID() != -1);
+        }
+        public int GetActiveLicenseID()
+        {//this will get the license id that belongs to this application
+         //  return clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
+            return -1;
+        }
+
         public bool Save()
         {
+            base.Mode = (clsBussenessApplications.enMode)Mode;
             if (base.Save() == false)
             {
                 return false;
