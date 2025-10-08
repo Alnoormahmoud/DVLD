@@ -39,3 +39,10 @@ C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.Controls.ucAppl
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.frmScheduleTest.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.Controls.ucScheduledTest.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Tests.frmTakeTest.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Drivers.frmListDrivers.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.frmIssueDriverLicenseFirstTime.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.frmShowPersonLicenseHistory.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Controls.ucDriverLicennses.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.Controls.ucDriverLicenseInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.frmShowLicenseInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.Controls.ucDriverLicenseInfoWithFilter.resources

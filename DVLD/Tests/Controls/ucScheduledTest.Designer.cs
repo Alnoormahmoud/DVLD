@@ -330,7 +330,7 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(118, 200);
+            this.lblTitle.Location = new System.Drawing.Point(177, 209);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(267, 58);
@@ -343,7 +343,7 @@
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbTestTypeImage.Image = global::DVLD.Properties.Resources.driving_test_512;
             this.pbTestTypeImage.InitialImage = null;
-            this.pbTestTypeImage.Location = new System.Drawing.Point(160, 11);
+            this.pbTestTypeImage.Location = new System.Drawing.Point(205, 20);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.pbTestTypeImage.Name = "pbTestTypeImage";
             this.pbTestTypeImage.Size = new System.Drawing.Size(225, 177);

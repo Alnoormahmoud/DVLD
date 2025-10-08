@@ -50,12 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDataTestAppointments.cs" />
+    <Compile Include="DataDrivers.cs" />
+    <Compile Include="DataLicenses.cs" />
     <Compile Include="DataTests.cs" />
     <Compile Include="DataTestsTypes.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DataLicenseClasses.cs" />
     <Compile Include="DataApplicationTypes.cs" />
-    <Compile Include="DataCountriesManagement.cs" />
+    <Compile Include="DataCountries.cs" />
     <Compile Include="DataApplications.cs" />
     <Compile Include="DataLocalDrivingLicenseApplications.cs" />
     <Compile Include="DataPeople.cs" />

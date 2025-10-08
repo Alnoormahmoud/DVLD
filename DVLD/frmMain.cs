@@ -1,6 +1,7 @@
 ﻿using BussenessAccesses;
 using DVLD.Application.Application_Type;
 using DVLD.Applications.LocalDrivingLicense;
+using DVLD.Drivers;
 using DVLD.Global_Classes;
 using DVLD.Tests.Tests_Types;
 using DVLD.Users;
@@ -97,6 +98,12 @@ namespace DVLD
         private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new frmListLocalDrivingLicenseApplications();
+            frm.ShowDialog();
+        }
+
+        private void drToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmListDrivers();
             frm.ShowDialog();
         }
     }

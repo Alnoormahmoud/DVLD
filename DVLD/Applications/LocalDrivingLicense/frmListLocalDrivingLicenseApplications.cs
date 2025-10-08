@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Policy;
+using DVLD.Licenses.Local_Licenses;
+using DVLD.Licenses;
 
 namespace DVLD.Applications.LocalDrivingLicense
 {
@@ -230,7 +232,7 @@ namespace DVLD.Applications.LocalDrivingLicense
 
             //Enable/Disable Delete Menue Item
             //We only allow delete incase the application status is new not complete or Cancelled.
-            deleteToolStripMenuItem.Enabled = (_LDLApplications.ApplicationStatus == clsBussenessApplications.enApplicationStatus.New);
+            deleteToolStripMenuItem.Enabled = (_LDLApplications.ApplicationStatus != clsBussenessApplications.enApplicationStatus.Completed);
 
             //Enable Disable Schedule menue and it's sub menue
             bool PassedVisionTest = _LDLApplications.DoesPassTestType(clsBussenessTestTypes.enTestType.VisionTest); ;
@@ -257,39 +259,39 @@ namespace DVLD.Applications.LocalDrivingLicense
 
         private void IssueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int LocalDrivingLicenseApplicationID = (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
-            //frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime(LocalDrivingLicenseApplicationID);
-            //frm.ShowDialog();
-            ////refresh
-            //frmListLocalDrivingLicesnseApplications_Load(null, null);
+            int LocalDrivingLicenseApplicationID = (int)dgvLDLApplications.CurrentRow.Cells[0].Value;
+            frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime(LocalDrivingLicenseApplicationID);
+            frm.ShowDialog();
+            //refresh
+            frmListLocalDrivingLicenseApplications_Load(null, null);
         }
 
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int LocalDrivingLicenseApplicationID = (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            int LocalDrivingLicenseApplicationID = (int)dgvLDLApplications.CurrentRow.Cells[0].Value;
 
-            //int LicenseID = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID).GetActiveLicenseID();
+            int LicenseID = clsBussenessLocBalDrivingLicenseApplications.FindLDLApplicationBYID(LocalDrivingLicenseApplicationID).GetActiveLicenseID();
 
-            //if (LicenseID != -1)
-            //{
-            //    frmShowLicenseInfo frm = new frmShowLicenseInfo(LicenseID);
-            //    frm.ShowDialog();
+            if (LicenseID != -1)
+            {
+                frmShowLicenseInfo frm = new frmShowLicenseInfo(LicenseID);
+                frm.ShowDialog();
 
-            //}
-            //else
-            //{
+            }
+            else
+            {
                 MessageBox.Show("No License Found!", "No License", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-          //  }
+            }
         }
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int LocalDrivingLicenseApplicationID = (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
-            //clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
+            int LocalDrivingLicenseApplicationID = (int)dgvLDLApplications.CurrentRow.Cells[0].Value;
+            clsBussenessLocBalDrivingLicenseApplications localDrivingLicenseApplication = clsBussenessLocBalDrivingLicenseApplications.FindLDLApplicationBYID(LocalDrivingLicenseApplicationID);
 
-            //frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(localDrivingLicenseApplication.ApplicantPersonID);
-            //frm.ShowDialog();
+            frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(localDrivingLicenseApplication.ApplicantPersonID);
+            frm.ShowDialog();
         }
     }
 }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussenessApplicationTypes.cs" />
+    <Compile Include="BussenessDrivers.cs" />
     <Compile Include="BussenessLicenseClasses.cs" />
+    <Compile Include="BussenessLicenses.cs" />
     <Compile Include="BussenessLocalDrivingLicenseApplications.cs" />
     <Compile Include="BussenessPeoplecs.cs" />
     <Compile Include="BussenessCountries.cs" />

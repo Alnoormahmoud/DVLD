@@ -67,7 +67,7 @@
             // 
             this.lblStatusDate.AutoSize = true;
             this.lblStatusDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusDate.Location = new System.Drawing.Point(945, 102);
+            this.lblStatusDate.Location = new System.Drawing.Point(936, 101);
             this.lblStatusDate.Name = "lblStatusDate";
             this.lblStatusDate.Size = new System.Drawing.Size(62, 25);
             this.lblStatusDate.TabIndex = 201;
@@ -77,7 +77,7 @@
             // 
             this.lblCreatedByUser.AutoSize = true;
             this.lblCreatedByUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedByUser.Location = new System.Drawing.Point(945, 168);
+            this.lblCreatedByUser.Location = new System.Drawing.Point(936, 167);
             this.lblCreatedByUser.Name = "lblCreatedByUser";
             this.lblCreatedByUser.Size = new System.Drawing.Size(62, 25);
             this.lblCreatedByUser.TabIndex = 200;
@@ -137,7 +137,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(945, 30);
+            this.lblDate.Location = new System.Drawing.Point(936, 29);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(62, 25);
             this.lblDate.TabIndex = 193;
@@ -157,7 +157,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(245, 231);
+            this.lblType.Location = new System.Drawing.Point(236, 230);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(62, 25);
             this.lblType.TabIndex = 192;
@@ -167,7 +167,7 @@
             // 
             this.lblFees.AutoSize = true;
             this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFees.Location = new System.Drawing.Point(245, 167);
+            this.lblFees.Location = new System.Drawing.Point(236, 166);
             this.lblFees.Name = "lblFees";
             this.lblFees.Size = new System.Drawing.Size(62, 25);
             this.lblFees.TabIndex = 191;
@@ -177,7 +177,7 @@
             // 
             this.lblApplicant.AutoSize = true;
             this.lblApplicant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicant.Location = new System.Drawing.Point(244, 307);
+            this.lblApplicant.Location = new System.Drawing.Point(235, 306);
             this.lblApplicant.Name = "lblApplicant";
             this.lblApplicant.Size = new System.Drawing.Size(62, 25);
             this.lblApplicant.TabIndex = 190;
@@ -237,7 +237,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(244, 96);
+            this.lblStatus.Location = new System.Drawing.Point(235, 95);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(62, 25);
             this.lblStatus.TabIndex = 183;
@@ -289,7 +289,7 @@
             this.lblApplicationID.AutoSize = true;
             this.lblApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicationID.ForeColor = System.Drawing.Color.Red;
-            this.lblApplicationID.Location = new System.Drawing.Point(244, 29);
+            this.lblApplicationID.Location = new System.Drawing.Point(235, 28);
             this.lblApplicationID.Name = "lblApplicationID";
             this.lblApplicationID.Size = new System.Drawing.Size(58, 30);
             this.lblApplicationID.TabIndex = 177;

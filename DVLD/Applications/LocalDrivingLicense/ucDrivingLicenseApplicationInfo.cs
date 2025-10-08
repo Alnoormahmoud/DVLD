@@ -11,8 +11,9 @@ using BussenessAccesses;
  using static System.Net.Mime.MediaTypeNames;
 using DVLD.Tests;
 using DVLD.Applications.Controls;
+using DVLD.Licenses.Local_Licenses;
 
- namespace DVLD.Applications.LocalDrivingLicense
+namespace DVLD.Applications.LocalDrivingLicense
 {
     public partial class ucDrivingLicenseApplicationInfo : UserControl
     {
@@ -32,10 +33,10 @@ using DVLD.Applications.Controls;
 
         private void _FillLDLApplicationInfo()
         {
-            //_LicenseID = _LocalDrivingLicenseApplication.GetActiveLicenseID();
+            _LicenseID = LDLApplication.GetActiveLicenseID();
 
             ////incase there is license enable the show link.
-            //llShowLicenceInfo.Enabled = (_LicenseID != -1);
+             linkLabel1.Enabled = (_LicenseID != -1);
 
             LDLAPPID = LDLApplication.LocalDrivingLicenseApplicationID;
 
@@ -72,26 +73,11 @@ using DVLD.Applications.Controls;
          }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowLicenseInfo frm = new frmShowLicenseInfo(_LocalDrivingLicenseApplication.GetActiveLicenseID());
-            //frm.ShowDialog();
-        }
-
-        private void ucDrivingLicenseApplicationInfo_Load(object sender, EventArgs e)
-        {
- 
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(_LicenseID);
+            frm.ShowDialog();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ucApplicationBasicInfo1_Load(object sender, EventArgs e)
         {
 
         }

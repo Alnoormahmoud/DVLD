@@ -292,6 +292,7 @@
             this.drToolStripMenuItem.Name = "drToolStripMenuItem";
             this.drToolStripMenuItem.Size = new System.Drawing.Size(170, 100);
             this.drToolStripMenuItem.Text = "Divers";
+            this.drToolStripMenuItem.Click += new System.EventHandler(this.drToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 

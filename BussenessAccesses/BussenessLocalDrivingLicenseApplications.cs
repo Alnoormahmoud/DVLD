@@ -121,11 +121,7 @@ namespace BussenessAccesses
                 return null;
             }
         }
-        public bool IsLDLApplicationExsistBYID(int LDLApplicationID)
-        {
-            return clsDataLocalDrivingLicenseApplications.IsLDLApplicationExistById(LDLApplicationID);
-        }
-
+ 
         public byte TotalTrialsPerTest(clsBussenessTestTypes.enTestType TestTypeID)
         {
             return clsDataLocalDrivingLicenseApplications.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
@@ -171,10 +167,59 @@ namespace BussenessAccesses
         }
         public int GetActiveLicenseID()
         {//this will get the license id that belongs to this application
-         //  return clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
-            return -1;
+            return clsBussenessLicenses.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
         }
+        public int IssueLicenseForTheFirtTime(string Notes, int CreatedByUserID)
+        {
+            int DriverID = -1;
 
+            clsBussenessDrivers Driver = clsBussenessDrivers.FindDriverByPersonId(this.ApplicantPersonID);
+
+            if (Driver == null)
+            {
+                //we check if the driver already there for this person.
+                Driver = new clsBussenessDrivers();
+
+                Driver.PersonID = this.ApplicantPersonID;
+                Driver.CreatedByUserID = CreatedByUserID;
+                if (Driver.Save())
+                {
+                    DriverID = Driver.DriverID;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                DriverID = Driver.DriverID;
+            }
+            //now we diver is there, so we add new licesnse
+
+            clsBussenessLicenses License = new clsBussenessLicenses();
+            License.ApplicationID = this.ApplicationID;
+            License.DriverID = DriverID;
+            License.LicenseClassID = this.LicenseClassID;
+            License.IssueDate = DateTime.Now;
+            License.ExpirationDate = DateTime.Now.AddYears(this.LicenseClassInfo.DefaultValidityLength);
+            License.Notes = Notes;
+            License.PaidFees = this.LicenseClassInfo.ClassFees;
+            License.IsActive = true;
+            License.IssueReason = clsBussenessLicenses.enIssueReason.FirstTime;
+            License.CreatedByUserID = CreatedByUserID;
+
+            if (License.Save())
+            {
+                //now we should set the application status to complete.
+                this.SetComplete();
+
+                return License.LicenseID;
+            }
+
+            else
+                return -1;
+        }
         public bool Save()
         {
             base.Mode = (clsBussenessApplications.enMode)Mode;
