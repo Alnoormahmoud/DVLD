@@ -49,6 +49,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDataInternationalLicenses.cs" />
     <Compile Include="clsDataTestAppointments.cs" />
     <Compile Include="DataDrivers.cs" />
     <Compile Include="DataLicenses.cs" />

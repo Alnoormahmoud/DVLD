@@ -215,46 +215,7 @@ namespace DataAccesses
 
         }    
         
-        public static DataTable GetAllInternationalLicensesForADriver(int PersonID)
-        {
 
-            DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
-
-            string query = "SELECT FROM   Drivers INNER JOIN People ON Drivers.PersonID = People.PersonID INNER JOIN  Licenses ON Drivers.DriverID = Licenses.DriverID where Drivers.PersonID = @PersonID ";
-
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
-
-                {
-                    dt.Load(reader);
-                }
-
-                reader.Close();
-
-
-            }
-
-            catch (Exception ex)
-            {
-                // Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return dt;
-
-        }
         public enum enIssueReason { FirstTime = 1, Renew = 2, DamagedReplacement = 3, LostReplacement = 4 };
  
 

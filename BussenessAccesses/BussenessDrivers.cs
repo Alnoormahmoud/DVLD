@@ -75,7 +75,7 @@ namespace BussenessAccesses
         }
         public static DataTable GetAllInternationalLicensesForADriver(int DriverID)
         {
-            return clsBussenessLicenses.GetAllLocalLicenses(DriverID);
+            return clsBuessenessInternationalLicenses.GetAllInternationalLicensesForDriver(DriverID);
         }
 
         public static DataTable GetAllDrivers()

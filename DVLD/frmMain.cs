@@ -1,5 +1,6 @@
 ﻿using BussenessAccesses;
 using DVLD.Application.Application_Type;
+using DVLD.Applications.InternationalLicense;
 using DVLD.Applications.LocalDrivingLicense;
 using DVLD.Drivers;
 using DVLD.Global_Classes;
@@ -104,6 +105,18 @@ namespace DVLD
         private void drToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new frmListDrivers();
+            frm.ShowDialog();
+        }
+
+        private void internatioalDrivingLicenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListInternationalLicenses frm = new frmListInternationalLicenses();
+            frm.ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddNewInternationalLicense frm = new frmAddNewInternationalLicense();
             frm.ShowDialog();
         }
     }

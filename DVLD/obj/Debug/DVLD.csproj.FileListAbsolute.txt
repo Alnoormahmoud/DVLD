@@ -46,3 +46,7 @@ C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Controls.ucDriverLi
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.Controls.ucDriverLicenseInfo.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.frmShowLicenseInfo.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.Local_Licenses.Controls.ucDriverLicenseInfoWithFilter.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.InternationalLicense.frmAddNewInternationalLicense.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.InternationalLicense.frmListInternationalLicenses.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.International_License.frmShowInternationalLicenseInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.International_License.control.ucDriverInternationalLicenseInfo.resources

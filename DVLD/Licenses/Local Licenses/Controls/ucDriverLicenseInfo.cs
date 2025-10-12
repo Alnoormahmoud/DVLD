@@ -1,4 +1,5 @@
 ﻿using BussenessAccesses;
+using DVLD.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,13 +21,37 @@ namespace DVLD.Licenses.Local_Licenses.Controls
             InitializeComponent();
         }
 
-        public void LoadLicenseData(int LicenseID)
+        public int LicenseId
         {
-            LicenseInfo = clsBussenessLicenses.FindLicenseByLicenseId(LicenseID);
+            get { return LicenseID; }
+        }
 
+        public clsBussenessLicenses SelectedLicenseInfo
+        { get { return LicenseInfo; } }
+        private void _LoadPersonImage()
+        {
+            if (LicenseInfo.DriverInfo.PersonInfo.Gendor == 0)
+                pbPersonImage.Image = Resources.Male_512;
+            else
+                pbPersonImage.Image = Resources.Female_512;
+
+            string ImagePath = LicenseInfo.DriverInfo.PersonInfo.ImagePath;
+
+            if (ImagePath != "")
+                pbPersonImage.Load(ImagePath);
+ 
+        }
+
+        public void LoadLicenseData(int LicenseId)
+        {
+            LicenseInfo = clsBussenessLicenses.FindLicenseByLicenseId(LicenseId);
+            LicenseID = LicenseId;
             if (LicenseInfo == null)
             {
+
                 MessageBox.Show("License With ID : "+LicenseID.ToString()+" not found.");
+                LicenseID = -1;
+
                 return;
             }
             lblClass.Text = LicenseInfo.LicenseClassIfo.ClassName;
@@ -48,14 +73,7 @@ namespace DVLD.Licenses.Local_Licenses.Controls
             lblIsDetained.Text =  "No"; 
             lblIssueReason.Text = LicenseInfo.IssueReason.ToString();
 
-            pbPersonImage.ImageLocation = LicenseInfo.DriverInfo.PersonInfo.ImagePath;
-
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            _LoadPersonImage();
         }
 
         private void ucDriverLicenseInfo_Load(object sender, EventArgs e)

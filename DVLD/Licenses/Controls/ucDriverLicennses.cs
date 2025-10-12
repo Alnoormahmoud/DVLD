@@ -1,4 +1,5 @@
 ﻿using BussenessAccesses;
+using DVLD.Licenses.International_License;
 using DVLD.Licenses.Local_Licenses;
 using System;
 using System.Collections.Generic;
@@ -99,7 +100,7 @@ namespace DVLD.Licenses.Controls
         public void Clear()
         {
             AllLocalLicenses.Clear();
-
+            AllInternationalLicenses.Clear();
         }
         public void LoadLicensesInfo(int DriverId)
         {
@@ -114,10 +115,12 @@ namespace DVLD.Licenses.Controls
         {
 
             Driver = clsBussenessDrivers.FindDriverByPersonId(PersonID);
-            if (Driver != null)
+            if (Driver == null)
             {
-                DriverID = clsBussenessDrivers.FindDriverByPersonId(PersonID).DriverID;
+                MessageBox.Show("No Driver found for this person.", "No Driver", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            DriverID= Driver.DriverID;
 
             _LoadLocalLicenseInfo();
             _LoadInternationalLicenseInfo();
@@ -125,9 +128,9 @@ namespace DVLD.Licenses.Controls
 
         private void InternationalLicenseHistorytoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int InternationalLicenseID = (int)dgvInternationalLicensesHistory.CurrentRow.Cells[0].Value;
-            //frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
-            //frm.ShowDialog();
+            int InternationalLicenseID = (int)dgvInternationalLicensesHistory.CurrentRow.Cells[0].Value;
+            frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
+            frm.ShowDialog();
         }
 
         private void tpLocalLicenses_Click(object sender, EventArgs e)

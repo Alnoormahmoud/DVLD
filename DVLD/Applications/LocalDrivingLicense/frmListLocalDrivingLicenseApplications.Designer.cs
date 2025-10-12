@@ -94,7 +94,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(376, 211);
+            this.label3.Location = new System.Drawing.Point(463, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(537, 37);
             this.label3.TabIndex = 99;
@@ -206,7 +206,7 @@
             this.toolStripSeparator5,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(416, 393);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(416, 360);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening_1);
             // 
             // pToolStripMenuItem
@@ -360,7 +360,7 @@
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.Image = global::DVLD.Properties.Resources.Manage_Applications_64;
             this.pbPersonImage.InitialImage = null;
-            this.pbPersonImage.Location = new System.Drawing.Point(476, 3);
+            this.pbPersonImage.Location = new System.Drawing.Point(546, 3);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(367, 192);
