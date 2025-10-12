@@ -154,6 +154,8 @@ namespace BussenessAccesses
             return (LocalDrivingLicenseApplicationID != -1);
         }
 
+  
+
         private bool _UpdateLDLApplication()
         {
             //call DataAccess Layer 

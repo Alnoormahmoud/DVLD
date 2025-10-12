@@ -107,6 +107,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test Type";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // gbRetakeTestInfo
             // 
@@ -481,6 +482,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ucScheduleTest";
             this.Size = new System.Drawing.Size(830, 940);
+            this.Load += new System.EventHandler(this.ucScheduleTest_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbRetakeTestInfo.ResumeLayout(false);

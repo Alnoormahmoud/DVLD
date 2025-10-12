@@ -107,9 +107,56 @@ namespace BussenessAccesses
         public static DataTable GetAllLicenses()
         {
             return clsDataLicenses.GetAllLicenses();
-        }    
- 
-        private bool _AddNewUser()
+        }
+        public clsBussenessLicenses RenewLicense(int CreatedByUserID, string Notes)
+        {
+
+            //First Create Applicaiton 
+            clsBussenessApplications Application = new clsBussenessApplications();
+
+            Application.ApplicantPersonID = this.DriverInfo.PersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)clsBussenessApplications.enApplicationType.RenewDrivingLicense;
+            Application.ApplicationStatus = clsBussenessApplications.enApplicationStatus.Completed;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.RenewDrivingLicense).Fees;
+            Application.CreatedByUserID = CreatedByUserID;
+
+            if (!Application.Save())
+            {
+                return null;
+            }
+
+            clsBussenessLicenses NewLicense = new clsBussenessLicenses();
+
+            NewLicense.ApplicationID = Application.ApplicationID;
+            NewLicense.DriverID = this.DriverID;
+            NewLicense.LicenseClassID = this.LicenseClassID;
+            NewLicense.IssueDate = DateTime.Now;
+
+            int DefaultValidityLength = this.LicenseClassIfo.DefaultValidityLength;
+
+            NewLicense.ExpirationDate = DateTime.Now.AddYears(DefaultValidityLength);
+            NewLicense.Notes = Notes;
+            NewLicense.PaidFees = this.LicenseClassIfo.ClassFees;
+            NewLicense.IsActive = true;
+            NewLicense.IssueReason = clsBussenessLicenses.enIssueReason.Renew;
+            NewLicense.CreatedByUserID = CreatedByUserID;
+
+
+            if (!NewLicense.Save())
+            {
+                return null;
+            }
+
+
+            //we need to deactivate the old License.
+            DeactivateCurrentLicense();
+
+            return NewLicense;
+
+        }
+        private bool _AddNewLicense()
         {
             //call DataAccess Layer 
 
@@ -117,12 +164,16 @@ namespace BussenessAccesses
 
             return (this.LicenseID != -1);
         }
+        public bool DeactivateCurrentLicense()
+        {
+            return (clsDataLicenses.DeactivateLicense(this.LicenseID));
+        }
 
-        public  static DataTable GetAllLocalLicenses(int DriverID)
+        public static DataTable GetAllLocalLicenses(int DriverID)
         {
             return clsDataLicenses.GetAllLocalLicensesForADriver(DriverID);
         }
-        private bool _UpdateUser()
+        private bool _UpdateLiense()
         {
             //call DataAccess Layer 
             return false;// clsDataUseresManagement.UpdateUser(this.UserID, this.UserName, this.Password, this.IsActive);
@@ -133,7 +184,7 @@ namespace BussenessAccesses
             switch (Mode)
             {
                 case enMode.AddNew:
-                    if (_AddNewUser())
+                    if (_AddNewLicense())
                     {
 
                         Mode = enMode.Update;
@@ -146,7 +197,7 @@ namespace BussenessAccesses
 
                 case enMode.Update:
 
-                    return _UpdateUser();
+                    return _UpdateLiense();
 
             }
 

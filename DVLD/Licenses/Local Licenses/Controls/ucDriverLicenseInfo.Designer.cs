@@ -420,7 +420,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.groupBox1.Size = new System.Drawing.Size(1170, 470);
+            this.groupBox1.Size = new System.Drawing.Size(1170, 488);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver License Info";
@@ -588,7 +588,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "ucDriverLicenseInfo";
-            this.Size = new System.Drawing.Size(1200, 500);
+            this.Size = new System.Drawing.Size(1200, 513);
             this.Load += new System.EventHandler(this.ucDriverLicenseInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -43,7 +43,7 @@
             this.pbPersonImage.Location = new System.Drawing.Point(402, 0);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(347, 170);
+            this.pbPersonImage.Size = new System.Drawing.Size(340, 155);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 105;
             this.pbPersonImage.TabStop = false;
@@ -54,7 +54,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(323, 175);
+            this.label3.Location = new System.Drawing.Point(325, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(499, 37);
             this.label3.TabIndex = 104;

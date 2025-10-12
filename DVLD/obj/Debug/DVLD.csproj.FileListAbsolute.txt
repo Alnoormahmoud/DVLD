@@ -50,3 +50,5 @@ C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.InternationalLi
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.InternationalLicense.frmListInternationalLicenses.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.International_License.frmShowInternationalLicenseInfo.resources
 C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Licenses.International_License.control.ucDriverInternationalLicenseInfo.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.RenewLicense.frmRenewLicense.resources
+C:\Users\Al Noor\Downloads\DVLD\DVLD\obj\Debug\DVLD.Applications.ReplaceLicense.frmReplaceLicenseDamagedOrLostLicense.resources

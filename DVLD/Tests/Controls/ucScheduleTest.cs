@@ -128,7 +128,7 @@ namespace DVLD.Tests.Controls
                 if (!_LoadTestAppointmentData())
                     return;
             }
-            lblTotalFees.Text= (Convert.ToSingle(lblFees.Text)+(Convert.ToSingle(lblRetakeAppFees.Text)).ToString());
+            lblTotalFees.Text = int.Parse(lblFees.Text) + int.Parse(lblRetakeAppFees.Text).ToString();
 
             if (!_HandleActiveTestAppointmentConstraint())
                 return;
@@ -327,6 +327,16 @@ namespace DVLD.Tests.Controls
                 MessageBox.Show("Faild to Save Appointment", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucScheduleTest_Load(object sender, EventArgs e)
+        {
 
         }
     }

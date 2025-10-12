@@ -125,11 +125,11 @@
     <Compile Include="Applications\RenewLicense\frmRenewLicense.Designer.cs">
       <DependentUpon>frmRenewLicense.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\ReplaceLicense\ReplaceLicenseDamagedOrLostLicense.cs">
+    <Compile Include="Applications\ReplaceLicense\frmReplaceLicenseDamagedOrLostLicense.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\ReplaceLicense\ReplaceLicenseDamagedOrLostLicense.Designer.cs">
-      <DependentUpon>ReplaceLicenseDamagedOrLostLicense.cs</DependentUpon>
+    <Compile Include="Applications\ReplaceLicense\frmReplaceLicenseDamagedOrLostLicense.Designer.cs">
+      <DependentUpon>frmReplaceLicenseDamagedOrLostLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="Drivers\frmListDrivers.cs">
       <SubType>Form</SubType>
@@ -340,6 +340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicense\ucDrivingLicenseApplicationInfo.resx">
       <DependentUpon>ucDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\RenewLicense\frmRenewLicense.resx">
+      <DependentUpon>frmRenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\ReplaceLicense\frmReplaceLicenseDamagedOrLostLicense.resx">
+      <DependentUpon>frmReplaceLicenseDamagedOrLostLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\frmListDrivers.resx">
       <DependentUpon>frmListDrivers.cs</DependentUpon>

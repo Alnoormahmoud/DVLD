@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DVLD.Applications.ReplaceLicense
 {
-    public partial class ReplaceLicenseDamagedOrLostLicense : Form
+    public partial class frmReplaceLicenseDamagedOrLostLicense : Form
     {
-        public ReplaceLicenseDamagedOrLostLicense()
+        public frmReplaceLicenseDamagedOrLostLicense()
         {
             InitializeComponent();
+        }
+
+        private void frmReplaceLicenseDamagedOrLostLicense_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

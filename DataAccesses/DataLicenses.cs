@@ -215,8 +215,6 @@ namespace DataAccesses
 
         }    
         
-
-        public enum enIssueReason { FirstTime = 1, Renew = 2, DamagedReplacement = 3, LostReplacement = 4 };
  
 
         public static int AddNewLicense(int ApplicationID, int DriverID, int LicenseClass, DateTime IssueDate, DateTime ExpirationDate, 
@@ -281,6 +279,42 @@ namespace DataAccesses
             return PersonID;
         }
 
+        public static bool DeactivateLicense(int LicenseID)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
+
+            string query = @"UPDATE Licenses
+                           SET 
+                              IsActive = 0
+                             
+                         WHERE LicenseID=@LicenseID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
 
     }
 
