@@ -155,6 +155,69 @@ namespace BussenessAccesses
 
             return NewLicense;
 
+        }  
+        
+        public clsBussenessLicenses ReplaceLicense(int CreatedByUserID, enIssueReason Reason)
+        {
+
+            
+            //First Create Applicaiton 
+            clsBussenessApplications Application = new clsBussenessApplications();
+
+            Application.ApplicantPersonID = this.DriverInfo.PersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationStatus = clsBussenessApplications.enApplicationStatus.Completed;
+            Application.LastStatusDate = DateTime.Now;
+            Application.CreatedByUserID = CreatedByUserID;
+
+            if (Reason == enIssueReason.DamagedReplacement)
+            {
+                Application.ApplicationTypeID = (int)clsBussenessApplications.enApplicationType.ReplaceDamagedDrivingLicense;
+                Application.PaidFees = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.ReplaceDamagedDrivingLicense).Fees;
+            }
+            else
+            {
+                Application.ApplicationTypeID = (int)clsBussenessApplications.enApplicationType.ReplaceLostDrivingLicense;
+                Application.PaidFees = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.ReplaceLostDrivingLicense).Fees;
+            }
+
+
+            if (!Application.Save())
+            {
+                return null;
+            }
+
+            clsBussenessLicenses NewLicense = new clsBussenessLicenses();
+
+            NewLicense.ApplicationID = Application.ApplicationID;
+            NewLicense.DriverID = this.DriverID;
+            NewLicense.LicenseClassID = this.LicenseClassID;
+            NewLicense.IssueDate = DateTime.Now;
+
+            int DefaultValidityLength = this.LicenseClassIfo.DefaultValidityLength;
+
+            NewLicense.ExpirationDate = DateTime.Now.AddYears(DefaultValidityLength);
+            NewLicense.Notes = this.Notes;
+            NewLicense.PaidFees = this.LicenseClassIfo.ClassFees;
+            NewLicense.IsActive = true;
+            NewLicense.CreatedByUserID = CreatedByUserID;
+
+            NewLicense.IssueReason = Reason;
+          
+
+ 
+
+            if (!NewLicense.Save())
+            {
+                return null;
+            }
+
+
+            //we need to deactivate the old License.
+            DeactivateCurrentLicense();
+
+            return NewLicense;
+
         }
         private bool _AddNewLicense()
         {

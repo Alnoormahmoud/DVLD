@@ -117,9 +117,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::DVLD.Properties.Resources.Close_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(819, 1073);
+            this.button1.Location = new System.Drawing.Point(806, 1073);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 48);
+            this.button1.Size = new System.Drawing.Size(179, 48);
             this.button1.TabIndex = 177;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -132,9 +132,9 @@
             this.btnrenew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrenew.Image = global::DVLD.Properties.Resources.Renew_Driving_License_32;
             this.btnrenew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrenew.Location = new System.Drawing.Point(1027, 1073);
+            this.btnrenew.Location = new System.Drawing.Point(1020, 1073);
             this.btnrenew.Name = "btnrenew";
-            this.btnrenew.Size = new System.Drawing.Size(165, 48);
+            this.btnrenew.Size = new System.Drawing.Size(172, 48);
             this.btnrenew.TabIndex = 176;
             this.btnrenew.Text = "Renew";
             this.btnrenew.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblTitle.Location = new System.Drawing.Point(488, 20);
+            this.lblTitle.Location = new System.Drawing.Point(439, 30);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(424, 37);
             this.lblTitle.TabIndex = 175;
@@ -580,6 +580,7 @@
             this.Controls.Add(this.btnrenew);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.ucDriverLicenseInfoWithFilter1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRenewLicense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Renew License";
