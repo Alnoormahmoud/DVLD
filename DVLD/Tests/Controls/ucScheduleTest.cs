@@ -93,10 +93,11 @@ namespace DVLD.Tests.Controls
 
             if (CreationMode == enCreationMode.RetakeTest)
             {
-                lblRetakeAppFees.Text = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.RetakeTest).Fees.ToString();
+                lblRetakeAppFees.Text = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.RetakeTest).Fees.ToString("0.##");
                 gbRetakeTestInfo.Enabled = (CreationMode == enCreationMode.RetakeTest);
                 lblTitle.Text = "Schedule Retake Test";
                 lblRetakeTestAppID.Text = "0";
+
             }
             else
             {
@@ -113,9 +114,11 @@ namespace DVLD.Tests.Controls
 
             lblTrial.Text = _LDLApplication.TotalTrialsPerTest(_Type).ToString();
 
+
+
             if (Mode == enMode.AddNew)
             {
-                lblFees.Text = clsBussenessTestTypes.GetTestTypeByID(_Type).TestFees.ToString();
+                lblFees.Text = clsBussenessTestTypes.GetTestTypeByID(_Type).TestFees.ToString("0.##");
                 dtpTestDate.MinDate = DateTime.Now;
                 dtpTestDate.Value = DateTime.Now.AddDays(1);
                 lblRetakeTestAppID.Text = "N/A";
@@ -128,7 +131,9 @@ namespace DVLD.Tests.Controls
                 if (!_LoadTestAppointmentData())
                     return;
             }
-            lblTotalFees.Text = int.Parse(lblFees.Text) + int.Parse(lblRetakeAppFees.Text).ToString();
+
+       
+
 
             if (!_HandleActiveTestAppointmentConstraint())
                 return;
@@ -138,6 +143,15 @@ namespace DVLD.Tests.Controls
 
             if (!_HandlePrviousTestConstraint())
                 return;
+
+            decimal fees = 0;
+            decimal retakeFees = 0;
+
+            fees = Convert.ToDecimal(lblFees.Text);
+            retakeFees = Convert.ToDecimal(lblRetakeAppFees.Text);
+
+            lblTotalFees.Text = (fees + retakeFees).ToString("0.##");
+
 
         }
         private bool _HandleActiveTestAppointmentConstraint()
@@ -251,7 +265,7 @@ namespace DVLD.Tests.Controls
                 Application.ApplicationStatus = clsBussenessApplications.enApplicationStatus.Completed;
                 Application.LastStatusDate = DateTime.Now;
                 Application.PaidFees = clsBussenessApplicationTypes.GetApplicationTypeByApplicationTypeID(7).Fees;
-                Application.CreatedByUserID = 19;// clsGlobal.CurrentUser.UserID;
+                Application.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
                 if (!Application.Save())
                 {
@@ -261,6 +275,7 @@ namespace DVLD.Tests.Controls
                 }
 
                 _Appointment.RetakeTestApplicationID = Application.ApplicationID;
+                lblRetakeTestAppID.Text = Application.ApplicationID.ToString();
 
             }
             return true;

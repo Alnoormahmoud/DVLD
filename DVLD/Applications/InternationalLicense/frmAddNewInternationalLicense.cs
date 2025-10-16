@@ -17,6 +17,8 @@ namespace DVLD.Applications.InternationalLicense
     public partial class frmAddNewInternationalLicense : Form
     {
         int LicenseID = -1;
+        enum enMode { AddNew = 0, ViewOnly = 1 };
+        enMode Mode = enMode.AddNew;
 
         public frmAddNewInternationalLicense()
         {
@@ -30,7 +32,7 @@ namespace DVLD.Applications.InternationalLicense
             lblIssueDate.Text = lblApplicationDate.Text;
             lblExpirationDate.Text = DateTime.Now.AddYears(1).ToString();//add one year.
             lblFees.Text = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.NewInternationalLicense).Fees.ToString();
-            lblCreatedByUser.Text = "UnKnowen";// clsGlobal.CurrentUser.UserName;
+            lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
     
         }
 
@@ -66,7 +68,7 @@ namespace DVLD.Applications.InternationalLicense
             InternationalLicense.ApplicationStatus = clsBussenessApplications.enApplicationStatus.Completed;
             InternationalLicense.LastStatusDate = DateTime.Now;
             InternationalLicense.PaidFees = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.NewInternationalLicense).Fees;
-            InternationalLicense.CreatedByUserID = 19;// clsGlobal.CurrentUser.UserID;
+            InternationalLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
 
             InternationalLicense.DriverID = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverID;
@@ -74,7 +76,7 @@ namespace DVLD.Applications.InternationalLicense
             InternationalLicense.IssueDate = DateTime.Now;
             InternationalLicense.ExpirationDate = DateTime.Now.AddYears(1);
 
-            InternationalLicense.CreatedByUserID = 19;// clsGlobal.CurrentUser.UserID;
+            InternationalLicense.CreatedByUserID =  clsGlobal.CurrentUser.UserID;
 
             if (!InternationalLicense.Save())
             {

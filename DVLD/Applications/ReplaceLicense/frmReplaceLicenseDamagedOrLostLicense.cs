@@ -1,4 +1,5 @@
 ﻿using BussenessAccesses;
+using DVLD.Global_Classes;
 using DVLD.Licenses;
 using DVLD.Licenses.Local_Licenses;
 using System;
@@ -26,7 +27,7 @@ namespace DVLD.Applications.ReplaceLicense
         {
             rbDamagedLicense.Checked = true;
             lblApplicationDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            lblCreatedByUser.Text = "UNKonwen";
+            lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
 
         }
 
@@ -89,7 +90,7 @@ namespace DVLD.Applications.ReplaceLicense
             }
             clsBussenessApplications.enApplicationType AppType = (rbLostLicense.Checked) ? clsBussenessApplications.enApplicationType.ReplaceLostDrivingLicense : clsBussenessApplications.enApplicationType.ReplaceDamagedDrivingLicense;
 
-            clsBussenessLicenses NewLicense = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ReplaceLicense(19, _GetIssueReason());
+            clsBussenessLicenses NewLicense = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ReplaceLicense(clsGlobal.CurrentUser.UserID, _GetIssueReason());
 
             if (NewLicense == null)
             {

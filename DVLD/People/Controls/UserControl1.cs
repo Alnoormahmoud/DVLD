@@ -58,7 +58,7 @@ namespace DVLD
             InitializeComponent();
         }
 
-        private int _PersonID = -1;
+        private int MP_PersonID = -1;
 
         public int PersonID
         {

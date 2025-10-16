@@ -108,6 +108,7 @@
             this.Controls.Add(this.ucDriverLicenseInfo1);
             this.Name = "ucDriverLicenseInfoWithFilter";
             this.Size = new System.Drawing.Size(1230, 650);
+            this.Load += new System.EventHandler(this.ucDriverLicenseInfoWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

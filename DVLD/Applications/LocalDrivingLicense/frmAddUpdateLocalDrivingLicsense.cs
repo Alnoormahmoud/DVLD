@@ -99,22 +99,20 @@ namespace DVLD.Applications.LocalDrivingLicense
                 return;
             }
 
-            //check if user already have issued license of the same driving  class.
-            //KKKKKKKK I Don't Have The Licenses Right Now SO I"ll Come For This Lette
-            //if (clsBussenessLicenseClasses.IsLicenseExistByPersonID(ucInfoWithFillter1.PersonID, LicenseClassID))
-            //{
+            if (clsBussenessLicenses.GetActiveLicenseIDByPersonID(ucInfoWithFillter1.PersonID, LicenseClassID) != -1) 
+            {
 
-            //    MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+                MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            _LDLApplication.ApplicantPersonID = ucInfoWithFillter1.PersonID;
+             _LDLApplication.ApplicantPersonID = ucInfoWithFillter1.PersonID;
             _LDLApplication.ApplicationDate = DateTime.Now;
             _LDLApplication.ApplicationTypeID = 1; //local driving license
             _LDLApplication.ApplicationStatus = clsBussenessApplications.enApplicationStatus.New; //new
             _LDLApplication.LastStatusDate = DateTime.Now;
             _LDLApplication.PaidFees = Convert.ToDecimal(lblAppFee.Text);
-            _LDLApplication.CreatedByUserID = 19; //clsGlobal.CurrentUser.UserID;
+            _LDLApplication.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
             _LDLApplication.LicenseClassID = LicenseClassID;
 
@@ -160,7 +158,7 @@ namespace DVLD.Applications.LocalDrivingLicense
                 cbLicenseClass.SelectedIndex = 2;
                 lblAppFee.Text = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.NewDrivingLicense).Fees.ToString();
                 lblAppDate.Text = DateTime.Now.ToShortDateString();
-                lblCreatedBy.Text = "Alnoor";//clsGlobal.CurrentUser.UserName;
+                lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
             }
             else
             {

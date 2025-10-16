@@ -1,4 +1,5 @@
 ﻿using BussenessAccesses;
+using DVLD.Global_Classes;
 using DVLD.Licenses;
 using DVLD.Licenses.Local_Licenses;
 using System;
@@ -25,7 +26,7 @@ namespace DVLD.Applications.RenewLicense
         private void frmRenewLicense_Load(object sender, EventArgs e)
         {
             lblApplicationDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            lblCreatedByUser.Text = "UnKnowen";// clsGlobal.CurrentUser.UserName;
+            lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
 
             lblApplicationFees.Text = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.RenewDrivingLicense).Fees.ToString();
 
@@ -40,7 +41,7 @@ namespace DVLD.Applications.RenewLicense
                 return;
             }
 
-            clsBussenessLicenses NewLicense = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.RenewLicense(19, txtNotes.Text.Trim());
+            clsBussenessLicenses NewLicense = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.RenewLicense(clsGlobal.CurrentUser.UserID, txtNotes.Text.Trim());
 
             if (NewLicense == null)
             {

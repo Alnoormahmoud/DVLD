@@ -63,7 +63,7 @@
             this.toolStripSeparator1,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsDrivers.Name = "contextMenuStrip1";
-            this.cmsDrivers.Size = new System.Drawing.Size(326, 169);
+            this.cmsDrivers.Size = new System.Drawing.Size(326, 136);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -167,10 +167,10 @@
             this.dgvDrivers.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDrivers.RowTemplate.Height = 28;
             this.dgvDrivers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrivers.Size = new System.Drawing.Size(1250, 364);
+            this.dgvDrivers.Size = new System.Drawing.Size(1350, 364);
             this.dgvDrivers.TabIndex = 136;
             this.dgvDrivers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLDLApplications_CellDoubleClick);
-             // 
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -240,7 +240,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1098, 684);
+            this.btnClose.Location = new System.Drawing.Point(1198, 684);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(163, 48);
             this.btnClose.TabIndex = 139;
@@ -254,7 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1278, 744);
+            this.ClientSize = new System.Drawing.Size(1378, 744);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbPersonImage);
             this.Controls.Add(this.label3);

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuessenessDetainedLicenses.cs" />
     <Compile Include="BussenessApplicationTypes.cs" />
     <Compile Include="BussenessDrivers.cs" />
     <Compile Include="BussenessLicenseClasses.cs" />

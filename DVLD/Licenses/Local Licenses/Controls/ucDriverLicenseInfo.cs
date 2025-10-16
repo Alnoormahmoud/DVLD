@@ -59,6 +59,7 @@ namespace DVLD.Licenses.Local_Licenses.Controls
             lblLicenseID.Text = LicenseInfo.LicenseID.ToString();
             lblNationalNo.Text = LicenseInfo.DriverInfo.PersonInfo.NationalNo;
             lblGendor.Text = LicenseInfo.DriverInfo.PersonInfo.Gendor == 0 ? "Male" : "Female";
+ 
             lblExpirationDate.Text = LicenseInfo.ExpirationDate.ToShortDateString();
             lblIssueDate.Text = LicenseInfo.IssueDate.ToShortDateString();
             if(LicenseInfo.Notes == "")
@@ -70,8 +71,9 @@ namespace DVLD.Licenses.Local_Licenses.Controls
             lblIsActive.Text = LicenseInfo.IsActive ? "Yes" : "No";
             lblDateOfBirth.Text = LicenseInfo.DriverInfo.PersonInfo.DateOfBirth.ToShortDateString();
             lblDriverID.Text = LicenseInfo.DriverID.ToString();
-            lblIsDetained.Text =  "No"; 
-            lblIssueReason.Text = LicenseInfo.IssueReason.ToString();
+            lblIsDetained.Text = LicenseInfo.IsDetained ? "Yes" : "No"; 
+ 
+            lblIssueReason.Text = LicenseInfo.IssueReasonText;
 
             _LoadPersonImage();
         }

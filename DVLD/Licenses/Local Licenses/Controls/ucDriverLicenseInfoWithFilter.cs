@@ -118,5 +118,10 @@ namespace DVLD.Licenses.Local_Licenses.Controls
                 errorProvider1.SetError(txtLicenseID, null);
             }
         }
+
+        private void ucDriverLicenseInfoWithFilter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

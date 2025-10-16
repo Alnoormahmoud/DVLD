@@ -358,7 +358,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ucScheduledTest";
             this.Size = new System.Drawing.Size(670, 730);
-            this.groupBox1.ResumeLayout(false);
+             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

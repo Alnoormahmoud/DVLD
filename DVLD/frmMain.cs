@@ -159,5 +159,10 @@ namespace DVLD
             frmReliseDetainedLicense frm = new frmReliseDetainedLicense();
             frm.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

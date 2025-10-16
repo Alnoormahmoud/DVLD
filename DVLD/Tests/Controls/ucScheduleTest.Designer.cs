@@ -196,7 +196,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DVLD.Properties.Resources.Number_32;
-            this.pictureBox5.Location = new System.Drawing.Point(196, 119);
+            this.pictureBox5.Location = new System.Drawing.Point(221, 119);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +207,7 @@
             // 
             this.lblRetakeTestAppID.AutoSize = true;
             this.lblRetakeTestAppID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetakeTestAppID.Location = new System.Drawing.Point(237, 119);
+            this.lblRetakeTestAppID.Location = new System.Drawing.Point(262, 119);
             this.lblRetakeTestAppID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRetakeTestAppID.Name = "lblRetakeTestAppID";
             this.lblRetakeTestAppID.Size = new System.Drawing.Size(55, 29);
@@ -218,7 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 116);
+            this.label4.Location = new System.Drawing.Point(37, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 29);

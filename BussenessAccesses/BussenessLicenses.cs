@@ -34,18 +34,18 @@ namespace BussenessAccesses
         public enIssueReason IssueReason { set; get; }
         public int CreatedByUserID { set; get; }
 
-        //public string IssueReasonText
-        //{
-        //    get
-        //    {
-        //        return GetIssueReasonText(this.IssueReason);
-        //    }
-        //}
-        //public clsDetainedLicense DetainedInfo { set; get; }
-        //public bool IsDetained
-        //{
-        //    get { return clsDetainedLicense.IsLicenseDetained(this.LicenseID); }
-        //}
+        public string IssueReasonText
+        {
+            get
+            {
+                return GetIssueReasonText(this.IssueReason);
+            }
+        }
+        public clsBuessenessDetainedLicenses DetainedInfo { set; get; }
+        public bool IsDetained
+        {
+            get { return clsBuessenessDetainedLicenses.IsLicenseDetained(this.LicenseID); }
+        }
         public clsBussenessLicenses()
         {
             this.LicenseID = -1;
@@ -75,12 +75,32 @@ namespace BussenessAccesses
             this.IsActive = IsActive;
             this.IssueReason = (enIssueReason)IssueReason;
             this.CreatedByUserID = CreatedByUserID;
-           this.DriverInfo = clsBussenessDrivers.FindDriverByDriverId(DriverID);
+            this.DriverInfo = clsBussenessDrivers.FindDriverByDriverId(DriverID);
             this.LicenseClassIfo = clsBussenessLicenseClasses.Find(LicenseClass);
+            this.DetainedInfo = clsBuessenessDetainedLicenses.FindByLicenseID(this.LicenseID);
+
             Mode = enMode.Update;
         }
 
-        
+
+        public static string GetIssueReasonText(enIssueReason IssueReason)
+        {
+
+            switch (IssueReason)
+            {
+                case enIssueReason.FirstTime:
+                    return "First Time";
+                case enIssueReason.Renew:
+                    return "Renew";
+                case enIssueReason.DamagedReplacement:
+                    return "Replacement for Damaged";
+                case enIssueReason.LostReplacement:
+                    return "Replacement for Lost";
+                default:
+                    return "First Time";
+            }
+        }
+
         public static clsBussenessLicenses FindLicenseByLicenseId(int LicenseId)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = -1;
@@ -108,6 +128,46 @@ namespace BussenessAccesses
         {
             return clsDataLicenses.GetAllLicenses();
         }
+
+        public int Detain(float FineFees, int CreatedByUserID)
+        { 
+            clsBuessenessDetainedLicenses detainedLicense = new clsBuessenessDetainedLicenses();
+            detainedLicense.LicenseID = this.LicenseID;
+            detainedLicense.DetainDate = DateTime.Now;
+            detainedLicense.FineFees = Convert.ToSingle(FineFees);
+            detainedLicense.CreatedByUserID = CreatedByUserID;
+
+            if (!detainedLicense.Save())
+            {
+
+                return -1;
+            }
+
+            return detainedLicense.DetainID;
+
+        }
+        public bool ReleaseDetainedLicense (ref int ApplicationID, int ReleasedByUserID)
+        {
+            clsBussenessApplications Application = new clsBussenessApplications();
+            Application.ApplicantPersonID = this.DriverInfo.PersonID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)clsBussenessApplications.enApplicationType.ReleaseDetainedDrivingLicsense;
+            Application.ApplicationStatus = clsBussenessApplications.enApplicationStatus.Completed;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsBussenessApplicationTypes.Find((int)clsBussenessApplications.enApplicationType.ReleaseDetainedDrivingLicsense).Fees;
+            Application.CreatedByUserID = ReleasedByUserID;
+
+            if (!Application.Save())
+            {
+                ApplicationID = -1;
+                return false;
+            }
+
+            ApplicationID = Application.ApplicationID;
+
+            return this.DetainedInfo.ReleaseDetainedLicense(ReleasedByUserID, ApplicationID);
+        }
+
         public clsBussenessLicenses RenewLicense(int CreatedByUserID, string Notes)
         {
 
@@ -194,9 +254,7 @@ namespace BussenessAccesses
             NewLicense.LicenseClassID = this.LicenseClassID;
             NewLicense.IssueDate = DateTime.Now;
 
-            int DefaultValidityLength = this.LicenseClassIfo.DefaultValidityLength;
-
-            NewLicense.ExpirationDate = DateTime.Now.AddYears(DefaultValidityLength);
+            NewLicense.ExpirationDate = this.ExpirationDate;
             NewLicense.Notes = this.Notes;
             NewLicense.PaidFees = this.LicenseClassIfo.ClassFees;
             NewLicense.IsActive = true;
