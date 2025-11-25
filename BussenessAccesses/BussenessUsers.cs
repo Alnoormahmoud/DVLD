@@ -14,12 +14,14 @@ namespace BussenessAccesses
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
         public clsBussenessPeopleManegement PersonInfo;
+    
 
         public int UserID { set; get; }
         public int PersonID { set; get; } 
         public string UserName { set; get; }
         public string Password { set; get; }
         public bool IsActive { set; get; }
+        public int Permissions { set; get; }
  
         public  clsBussenessUsersManagement()
 
@@ -28,11 +30,12 @@ namespace BussenessAccesses
              this.UserName = "";
             this.Password = "";
             this.IsActive = true;
+            this.Permissions = 0;
 
             Mode = enMode.AddNew;
         }
 
-        public clsBussenessUsersManagement(int UserID, int PersonID, string UserName, string Password, bool IsActive)
+        public clsBussenessUsersManagement(int UserID, int PersonID, string UserName, string Password, bool IsActive, int Permissions)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
@@ -40,6 +43,7 @@ namespace BussenessAccesses
             this.Password = Password;
             this.IsActive = IsActive;
             this.PersonInfo = clsBussenessPeopleManegement.Find(PersonID);
+            this.Permissions = (Permissions);
 
             Mode = enMode.Update;
         }
@@ -51,15 +55,15 @@ namespace BussenessAccesses
 
         public static clsBussenessUsersManagement FindByPersonID(int PersonID)
         {
-            int UserID = -1;
+            int UserID = -1, Permission = 0;
             string UserName = "", Password = "";
             bool IsActive = false;
 
-            bool IsFound = clsDataUseresManagement.GetUserInfoByPersonID(PersonID, ref UserID, ref UserName, ref Password, ref IsActive);
+            bool IsFound = clsDataUseresManagement.GetUserInfoByPersonID(PersonID, ref UserID, ref UserName, ref Password, ref IsActive, ref Permission);
 
             if (IsFound)
                 //we return new object of that User with the right data
-                return new clsBussenessUsersManagement(UserID, UserID, UserName, Password, IsActive);
+                return new clsBussenessUsersManagement(UserID, UserID, UserName, Password, IsActive,Permission);
             else
                 return null;
         }
@@ -68,28 +72,28 @@ namespace BussenessAccesses
         {
 
             string UserName = "", Password = "";
-            int PersonId = -1;
+            int PersonId = -1, Permission = 0;
             bool IsActive = true;
 
-            bool IsFound = clsDataUseresManagement.GetUsernfoByID(UserId, ref PersonId, ref UserName, ref Password, ref IsActive);                                
+            bool IsFound = clsDataUseresManagement.GetUsernfoByID(UserId, ref PersonId, ref UserName, ref Password, ref IsActive, ref Permission);                                
 
             if (IsFound)
                 //we return new object of that person with the right data
-                return new clsBussenessUsersManagement( UserId, PersonId, UserName, Password, IsActive );
+                return new clsBussenessUsersManagement( UserId, PersonId, UserName, Password, IsActive,Permission);
                
             else
                 return null;
         }
         public static clsBussenessUsersManagement FindByUserNamAndPassword(string UserName,string Password)
         {
-            int PersonId = -1, UserId = -1;
+            int PersonId = -1, UserId = -1, Permission = 0;
             bool IsActive = true;
 
-            bool IsFound = clsDataUseresManagement.GetUsernfoByUserNameAndPassword(UserName, Password, ref PersonId, ref UserId, ref IsActive);                                
+            bool IsFound = clsDataUseresManagement.GetUsernfoByUserNameAndPassword(UserName, Password, ref PersonId, ref UserId, ref IsActive,ref Permission);                                
 
             if (IsFound)
                 //we return new object of that person with the right data
-                return new clsBussenessUsersManagement( UserId, PersonId, UserName, Password, IsActive );
+                return new clsBussenessUsersManagement( UserId, PersonId, UserName, Password, IsActive,Permission);
                
             else
                 return null;
@@ -113,7 +117,7 @@ namespace BussenessAccesses
         {
             //call DataAccess Layer 
 
-            this.UserID = clsDataUseresManagement.AddNewUser(this.PersonID, this.UserName, this.Password, this.IsActive);            
+            this.UserID = clsDataUseresManagement.AddNewUser(this.PersonID, this.UserName, this.Password, this.IsActive,this.Permissions);            
 
             return (this.PersonID != -1);
         }
@@ -121,7 +125,7 @@ namespace BussenessAccesses
         private bool _UpdateUser()
         {
             //call DataAccess Layer 
-            return clsDataUseresManagement.UpdateUser(this.UserID, this.UserName, this.Password, this.IsActive);
+            return clsDataUseresManagement.UpdateUser(this.UserID, this.UserName, this.Password, this.IsActive, (int)this.Permissions);
         }
 
         public static bool DeleteUser(int ID)

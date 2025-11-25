@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,8 @@ namespace DVLD
             System.Windows.Forms.Application.EnableVisualStyles();
 
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new  frmLoggIncs());
+           System.Windows.Forms.Application.Run(new  frmLoggIncs());
+           // System.Windows.Forms.Application.Run(new AddUpdateUser());
         }
     }
 }

@@ -135,6 +135,7 @@
             this.Controls.Add(this.ucInfo1);
             this.Name = "ucUserInfo";
             this.Size = new System.Drawing.Size(1250, 690);
+            this.Load += new System.EventHandler(this.ucUserInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

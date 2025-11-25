@@ -63,5 +63,9 @@ namespace DVLD.Users
             lblIsACtive.Text = "[???]";
         }
 
+        private void ucUserInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

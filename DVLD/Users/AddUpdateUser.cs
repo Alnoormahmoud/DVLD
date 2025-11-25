@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static DVLD.frmMain;
 
 namespace DVLD.Users
 {
@@ -17,6 +18,7 @@ namespace DVLD.Users
     {
         public enum enMode { Add = 0, Update = 1 };
         private enMode Mode = enMode.Update;
+   
 
         clsBussenessUsersManagement _User;
 
@@ -54,6 +56,21 @@ namespace DVLD.Users
             txtConfirmPassword.Text = _User.Password;
             cbIsActive.Checked = _User.IsActive;
             ucInfoWithFillter1.LoadPersonInfo(_User.PersonID);
+
+            enPermissions userPermissions = (enPermissions)_User.Permissions;
+
+
+            chkAccountSettings.Checked = (userPermissions & enPermissions.AccountSettings) == enPermissions.AccountSettings;
+
+            chkPeopleManagement.Checked = (userPermissions & enPermissions.PeopleManagement) == enPermissions.PeopleManagement;
+
+            chkUsersManagement.Checked = (userPermissions & enPermissions.UsersManagement) == enPermissions.UsersManagement;
+
+            chkDriversManagement.Checked = (userPermissions & enPermissions.DriversManagement) == enPermissions.DriversManagement;
+
+            chkApplicationsManagement.Checked = (userPermissions & enPermissions.ApplicationsManagement) == enPermissions.ApplicationsManagement;
+
+
         }
         private void _ResetDefultValues()
         {
@@ -146,12 +163,19 @@ namespace DVLD.Users
             }
 
 
- 
+            int permissions = 0;
+
+            if (chkAccountSettings.Checked) permissions += 1;
+            if (chkPeopleManagement.Checked) permissions += 2;
+            if (chkUsersManagement.Checked) permissions += 4;
+            if (chkDriversManagement.Checked) permissions += 8;
+            if (chkApplicationsManagement.Checked) permissions += 16;
+
             _User.PersonID = ucInfoWithFillter1.PersonID;
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
             _User.IsActive = cbIsActive.Checked;
-
+            _User.Permissions = permissions;
 
 
             if (_User.Save())
@@ -226,21 +250,7 @@ namespace DVLD.Users
                 return false;
             }
             return true;
-        }
-
-        private void txtPassword_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtPassword.Text))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(txtPassword, "Required Filed, Enter User Password.");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txtPassword, "");
-            }
-        }
+        }   
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -261,9 +271,24 @@ namespace DVLD.Users
 
         }
 
-        //private void AddUpdateUser_Activated(object sender, EventArgs e)
-        //{
-        //    ucInfoWithFillter1.FilterFocus();
-        //}
+        private void cbIsActive_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtPassword, "Required Filed, Enter User Password.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtPassword, "");
+            }
+        }
+           
     }
 }

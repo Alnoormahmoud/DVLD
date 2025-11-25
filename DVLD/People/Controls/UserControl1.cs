@@ -16,12 +16,12 @@ namespace DVLD
         // Define a custom event handler delegate with parameters
         public event Action<int> OnPersonSelected;
         // Create a protected method to raise the event with a parameter
-        protected virtual void PersonSelected(int PersonID)
+        public virtual void PersonSelected(int PersonID)
         {
             Action<int> handler = OnPersonSelected;
             if (handler != null)
             {
-                handler(PersonID); // Raise the event with the parameter
+                handler.Invoke(PersonID); // Raise the event with the parameter
             }
         }
 
@@ -133,7 +133,7 @@ namespace DVLD
             
         }
 
-        private void DataBackEvent(int PersonID)
+        private void DataBackEvent(object sender, int PersonID)
         {
             // Handle the data received
 

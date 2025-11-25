@@ -20,7 +20,7 @@ namespace DataAccesses
  
             string query = @"SELECT  Users.UserID, Users.PersonID,
                             FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL( People.ThirdName,'') +' ' + People.LastName,
-                             Users.UserName, Users.IsActive
+                             Users.UserName, Users.IsActive, Users.Permissions
                              FROM  Users INNER JOIN
                                     People ON Users.PersonID = People.PersonID";
 
@@ -55,19 +55,20 @@ namespace DataAccesses
             return dt;
 
         }
-        public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive)
+        public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive,int Permissions)
         {
             int UserId = -1;
 
             SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
-            string query = @"INSERT INTO Users (PersonId,UserName,Password,IsActive) 
-                             VALUES (@PersonId,@UserName,@Password,@IsActive);
+            string query = @"INSERT INTO Users (PersonId,UserName,Password,IsActive,Permissions) 
+                             VALUES (@PersonId,@UserName,@Password,@IsActive,@Permissions);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@PersonId", PersonID);
+            command.Parameters.AddWithValue("@Permissions", Permissions);
             command.Parameters.AddWithValue("@UserName", UserName);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
@@ -100,7 +101,7 @@ namespace DataAccesses
 
             return UserId;
         }
-        public static bool UpdateUser(int UserID, string UserName, string Password, bool IsActive)
+        public static bool UpdateUser(int UserID, string UserName, string Password, bool IsActive,int Permissions)
         {
 
             int rowsAffected = 0;
@@ -109,7 +110,8 @@ namespace DataAccesses
             string query = @"Update  Users  
                             set UserName = @UserName,
                                 Password = @Password, 
-                                IsActive = @IsActive                
+                                IsActive = @IsActive,                
+                                Permissions = @Permissions                
                                 where UserID = @UserID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -117,6 +119,7 @@ namespace DataAccesses
             command.Parameters.AddWithValue("@UserID", UserID);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Permissions", Permissions);
             command.Parameters.AddWithValue("@IsActive", IsActive);
 
 
@@ -272,7 +275,7 @@ namespace DataAccesses
 
             return isFound;
         }
-        public static bool GetUsernfoByID(int UserID, ref int PersonId, ref string UserName, ref string Password, ref bool IsActive)
+        public static bool GetUsernfoByID(int UserID, ref int PersonId, ref string UserName, ref string Password, ref bool IsActive, ref int Permission)
         {
             bool isFound = false;
 
@@ -298,6 +301,7 @@ namespace DataAccesses
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    Permission = (int)reader["Permissions"];
 
                 }
                 else
@@ -322,7 +326,7 @@ namespace DataAccesses
 
             return isFound;
         }
-        public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName, ref string Password, ref bool IsActive)
+        public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName, ref string Password, ref bool IsActive, ref int Permission)
         {
             bool isFound = false;
 
@@ -348,6 +352,7 @@ namespace DataAccesses
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
+                    Permission = (int)reader["Permissions"];
 
 
                 }
@@ -373,7 +378,7 @@ namespace DataAccesses
 
             return isFound;
         }
-        public static bool GetUsernfoByUserNameAndPassword(string UserName, string Password, ref int PersonId,ref int UserID , ref bool IsActive)
+        public static bool GetUsernfoByUserNameAndPassword(string UserName, string Password, ref int PersonId,ref int UserID , ref bool IsActive, ref int Permission)
         {
             bool isFound = false;
 
@@ -399,6 +404,7 @@ namespace DataAccesses
                     PersonId = (int)reader["PersonID"];
                     UserID = (int)reader["UserID"];
                     IsActive = (bool)reader["IsActive"];
+                    Permission = (int)reader["Permissions"];
 
                 }
                 else

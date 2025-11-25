@@ -86,7 +86,7 @@
             this.dgvUsers.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvUsers.EnableHeadersVisualStyles = false;
-            this.dgvUsers.Location = new System.Drawing.Point(44, 291);
+            this.dgvUsers.Location = new System.Drawing.Point(28, 289);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -103,7 +103,7 @@
             this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUsers.RowTemplate.Height = 28;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(1083, 422);
+            this.dgvUsers.Size = new System.Drawing.Size(1239, 422);
             this.dgvUsers.TabIndex = 98;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             this.dgvUsers.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentDoubleClick);
@@ -203,7 +203,7 @@
             "Person Name",
             "User Name",
             "Activity"});
-            this.cbFindBty.Location = new System.Drawing.Point(162, 227);
+            this.cbFindBty.Location = new System.Drawing.Point(146, 225);
             this.cbFindBty.Name = "cbFindBty";
             this.cbFindBty.Size = new System.Drawing.Size(203, 37);
             this.cbFindBty.TabIndex = 99;
@@ -214,7 +214,7 @@
             this.txtFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilter.ForeColor = System.Drawing.Color.Red;
-            this.txtFilter.Location = new System.Drawing.Point(386, 229);
+            this.txtFilter.Location = new System.Drawing.Point(370, 227);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(230, 32);
             this.txtFilter.TabIndex = 100;
@@ -227,7 +227,7 @@
             this.lblRecords.BackColor = System.Drawing.Color.Transparent;
             this.lblRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecords.ForeColor = System.Drawing.Color.Red;
-            this.lblRecords.Location = new System.Drawing.Point(184, 732);
+            this.lblRecords.Location = new System.Drawing.Point(168, 730);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(51, 26);
             this.lblRecords.TabIndex = 102;
@@ -239,7 +239,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(482, 171);
+            this.label3.Location = new System.Drawing.Point(466, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(236, 37);
             this.label3.TabIndex = 103;
@@ -249,7 +249,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 730);
+            this.label1.Location = new System.Drawing.Point(23, 728);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 29);
             this.label1.TabIndex = 105;
@@ -259,7 +259,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 230);
+            this.label2.Location = new System.Drawing.Point(23, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 106;
@@ -273,7 +273,7 @@
             "All ",
             "Yes",
             "No"});
-            this.cbIsActive.Location = new System.Drawing.Point(386, 227);
+            this.cbIsActive.Location = new System.Drawing.Point(370, 225);
             this.cbIsActive.Name = "cbIsActive";
             this.cbIsActive.Size = new System.Drawing.Size(121, 34);
             this.cbIsActive.TabIndex = 108;
@@ -285,7 +285,7 @@
             this.button1.AutoSize = true;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::DVLD.Properties.Resources.Add_New_User_32;
-            this.button1.Location = new System.Drawing.Point(1058, 220);
+            this.button1.Location = new System.Drawing.Point(1198, 218);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 54);
             this.button1.TabIndex = 107;
@@ -312,7 +312,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(968, 721);
+            this.btnClose.Location = new System.Drawing.Point(1108, 728);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(159, 52);
             this.btnClose.TabIndex = 97;
@@ -325,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1178, 794);
+            this.ClientSize = new System.Drawing.Size(1310, 794);
             this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);

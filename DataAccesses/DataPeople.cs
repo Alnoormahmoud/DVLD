@@ -11,9 +11,14 @@ namespace DataAccesses
         {
 
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString);
 
-            string query = @"SELECT People.PersonID, People.NationalNo,
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataSetting.ConnectionString))
+                {
+                    connection.Open();
+
+                    string query = @"SELECT People.PersonID, People.NationalNo,
               People.FirstName, People.SecondName, People.ThirdName, People.LastName,
 			  People.DateOfBirth, People.Gendor,  
 				  CASE
@@ -28,33 +33,29 @@ namespace DataAccesses
                          Countries ON People.NationalityCountryID = Countries.CountryID
                 ORDER BY People.FirstName";
 
-            SqlCommand command = new SqlCommand(query, connection);
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
 
-            try
-            {
-                connection.Open();
 
-                SqlDataReader reader = command.ExecuteReader();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
 
-                if (reader.HasRows)
+                            if (reader.HasRows)
 
-                {
-                    dt.Load(reader);
+                            {
+                                dt.Load(reader);
+                            }
+
+                        }
+                    }
+
+
                 }
-
-                reader.Close();
-
-
             }
-
             catch (Exception ex)
             {
                 // Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
+            }    
 
             return dt;
 

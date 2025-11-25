@@ -7,3 +7,15 @@ C:\Users\Al Noor\Downloads\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.cs
 C:\Users\Al Noor\Downloads\DVLD\BussenessAccesses\obj\Debug\Bussenes.EE105EDA.Up2Date
 C:\Users\Al Noor\Downloads\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.dll
 C:\Users\Al Noor\Downloads\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.pdb
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\BussenessAccesses.dll
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\BussenessAccesses.pdb
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\DataAccesses.dll
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\DataAccesses.pdb
+C:\Users\alnoo\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.csproj.AssemblyReference.cache
+C:\Users\alnoo\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.csproj.CoreCompileInputs.cache
+C:\Users\alnoo\DVLD\BussenessAccesses\obj\Debug\Bussenes.EE105EDA.Up2Date
+C:\Users\alnoo\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.dll
+C:\Users\alnoo\DVLD\BussenessAccesses\obj\Debug\BussenessAccesses.pdb
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\Guna.UI2.dll
+C:\Users\alnoo\DVLD\BussenessAccesses\bin\Debug\Guna.Charts.WinForms.xml

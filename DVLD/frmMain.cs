@@ -19,12 +19,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DVLD.Users.AddUpdateUser;
 
 namespace DVLD
 {
     public partial class frmMain : Form
     {
         private clsBussenessUsersManagement _CurrentUser;
+
+        [Flags]
+        public enum enPermissions
+        {
+            None = 0,
+            AccountSettings = 1,
+            PeopleManagement = 2,
+            UsersManagement = 4,
+            DriversManagement = 8,
+            ApplicationsManagement = 16
+        }
 
         frmLoggIncs _frmLogin;
 
@@ -48,7 +60,8 @@ namespace DVLD
             Form frm = new frmListUsers();
 
             frm.ShowDialog();
-        }
+
+         }
  
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -74,8 +87,32 @@ namespace DVLD
          //   this.BackColor = Color.White;
            // lblLoggedInUser.Text = "LoggedIn User: " + clsGlobal.CurrentUser.UserName;
             this.Refresh();
-        }
+            ApplyPermissions();
  
+        }
+        public static bool HasPermission(enPermissions permission)
+        {
+            return  ((enPermissions) clsGlobal.CurrentUser.Permissions & permission) == permission;
+        }
+
+        private void ApplyPermissions()
+        {
+            // Account Settings
+            accountSettingsToolStripMenuItem.Enabled = HasPermission(enPermissions.AccountSettings);
+
+            // People Management
+            usersToolStripMenuItem.Enabled = HasPermission(enPermissions.PeopleManagement);
+
+            // Users Management
+            peopleToolStripMenuItem.Enabled = HasPermission(enPermissions.UsersManagement);
+
+            // Drivers Management
+            drToolStripMenuItem.Enabled = HasPermission(enPermissions.DriversManagement);
+
+            // Applications Management
+            applicationsToolStripMenuItem.Enabled = HasPermission(enPermissions.ApplicationsManagement);
+        }
+
         private void applicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new frmListApplicationTypes();
@@ -161,6 +198,11 @@ namespace DVLD
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

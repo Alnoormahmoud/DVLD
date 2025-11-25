@@ -12,12 +12,10 @@ namespace DVLD
 {
     public partial class frmAddUpdatePerson : Form
     {
-
-        // Declare a delegate
-        public delegate void DataBackEventHandler(int PersonID);
-
+         
+ 
         // Declare an event using the delegate
-        public event DataBackEventHandler DataBack;
+        public event EventHandler<int> DataBack;
         public enum enMode { Add = 0, Update = 1 };
         private enMode Mode = enMode.Update;
 
@@ -241,7 +239,7 @@ namespace DVLD
                             Mode = enMode.Update;
 
                             lblText.Text = "Edit Person's Info";
-                            DataBack?.Invoke( _Person.PersonID);
+                            DataBack?.Invoke(this, _Person.PersonID);
 
                             return;
                         }

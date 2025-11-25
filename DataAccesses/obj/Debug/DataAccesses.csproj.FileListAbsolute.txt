@@ -6,3 +6,14 @@ C:\Users\Al Noor\Downloads\DVLD\DataAccesses\obj\Debug\DataAccesses.csproj.CoreC
 C:\Users\Al Noor\Downloads\DVLD\DataAccesses\obj\Debug\DataAcce.448C2FCC.Up2Date
 C:\Users\Al Noor\Downloads\DVLD\DataAccesses\obj\Debug\DataAccesses.dll
 C:\Users\Al Noor\Downloads\DVLD\DataAccesses\obj\Debug\DataAccesses.pdb
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\DataAccesses.dll
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\DataAccesses.pdb
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\alnoo\DVLD\DataAccesses\obj\Debug\DataAccesses.csproj.AssemblyReference.cache
+C:\Users\alnoo\DVLD\DataAccesses\obj\Debug\DataAccesses.csproj.CoreCompileInputs.cache
+C:\Users\alnoo\DVLD\DataAccesses\obj\Debug\DataAcce.448C2FCC.Up2Date
+C:\Users\alnoo\DVLD\DataAccesses\obj\Debug\DataAccesses.dll
+C:\Users\alnoo\DVLD\DataAccesses\obj\Debug\DataAccesses.pdb
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\Guna.UI2.dll
+C:\Users\alnoo\DVLD\DataAccesses\bin\Debug\Guna.Charts.WinForms.xml

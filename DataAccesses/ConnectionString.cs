@@ -8,6 +8,6 @@ namespace DataAccesses
 {
     internal class clsDataSetting
     {
-        public static string ConnectionString = "Server=.;Database=DVLD;User Id=sa;Password=123456;";
+        public static string ConnectionString = "Server=.;Database=DVLD;User Id=sa;Password=12345;";
     }
 }

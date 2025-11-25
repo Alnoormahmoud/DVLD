@@ -185,6 +185,7 @@ namespace DVLD.Applications.LocalDrivingLicense
 
             ucInfoWithFillter1.LoadPersonInfo(_LDLApplication.ApplicantPersonID);
             _SelectedPersoniD = _LDLApplication.ApplicantPersonID;
+            ucInfoWithFillter1.PersonSelected(_LDLApplication.ApplicantPersonID);
             lblLDLApllicationId.Text = _LDLApplication.LocalDrivingLicenseApplicationID.ToString();
             lblAppDate.Text = _LDLApplication.ApplicationDate.ToString();
             cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsBussenessLicenseClasses.Find(_LDLApplication.LicenseClassID).ClassName);

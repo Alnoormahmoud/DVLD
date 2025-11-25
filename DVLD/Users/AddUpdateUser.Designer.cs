@@ -32,9 +32,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tcGetPerson = new System.Windows.Forms.TabPage();
-            this.ucInfoWithFillter1 = new DVLD.UCInfoWithFillter();
             this.btnNext = new System.Windows.Forms.Button();
             this.tcLoginInfo = new System.Windows.Forms.TabPage();
+            this.Permissions = new System.Windows.Forms.GroupBox();
+            this.chkApplicationsManagement = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkDriversManagement = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkUsersManagement = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkAccountSettings = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkPeopleManagement = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -51,9 +56,11 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ucInfoWithFillter1 = new DVLD.UCInfoWithFillter();
             this.tabControl1.SuspendLayout();
             this.tcGetPerson.SuspendLayout();
             this.tcLoginInfo.SuspendLayout();
+            this.Permissions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -95,15 +102,6 @@
             this.tcGetPerson.Text = "Person Info";
             this.tcGetPerson.UseVisualStyleBackColor = true;
             // 
-            // ucInfoWithFillter1
-            // 
-            this.ucInfoWithFillter1.FilterEnabled = true;
-            this.ucInfoWithFillter1.Location = new System.Drawing.Point(14, 3);
-            this.ucInfoWithFillter1.Name = "ucInfoWithFillter1";
-            this.ucInfoWithFillter1.ShowAddPerson = true;
-            this.ucInfoWithFillter1.Size = new System.Drawing.Size(1210, 650);
-            this.ucInfoWithFillter1.TabIndex = 108;
-            // 
             // btnNext
             // 
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -120,6 +118,7 @@
             // 
             // tcLoginInfo
             // 
+            this.tcLoginInfo.Controls.Add(this.Permissions);
             this.tcLoginInfo.Controls.Add(this.txtPassword);
             this.tcLoginInfo.Controls.Add(this.cbIsActive);
             this.tcLoginInfo.Controls.Add(this.pictureBox3);
@@ -141,6 +140,129 @@
             this.tcLoginInfo.Text = "LogIn Info";
             this.tcLoginInfo.UseVisualStyleBackColor = true;
             // 
+            // Permissions
+            // 
+            this.Permissions.Controls.Add(this.chkApplicationsManagement);
+            this.Permissions.Controls.Add(this.chkDriversManagement);
+            this.Permissions.Controls.Add(this.chkUsersManagement);
+            this.Permissions.Controls.Add(this.chkAccountSettings);
+            this.Permissions.Controls.Add(this.chkPeopleManagement);
+            this.Permissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Permissions.Location = new System.Drawing.Point(673, 86);
+            this.Permissions.Name = "Permissions";
+            this.Permissions.Size = new System.Drawing.Size(491, 291);
+            this.Permissions.TabIndex = 121;
+            this.Permissions.TabStop = false;
+            this.Permissions.Text = "Permissions";
+            // 
+            // chkApplicationsManagement
+            // 
+            this.chkApplicationsManagement.Animated = true;
+            this.chkApplicationsManagement.AutoSize = true;
+            this.chkApplicationsManagement.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.chkApplicationsManagement.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkApplicationsManagement.CheckedState.BorderRadius = 0;
+            this.chkApplicationsManagement.CheckedState.BorderThickness = 0;
+            this.chkApplicationsManagement.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkApplicationsManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkApplicationsManagement.Location = new System.Drawing.Point(30, 248);
+            this.chkApplicationsManagement.Name = "chkApplicationsManagement";
+            this.chkApplicationsManagement.Size = new System.Drawing.Size(339, 33);
+            this.chkApplicationsManagement.TabIndex = 5;
+            this.chkApplicationsManagement.Text = "Applications Management";
+            this.chkApplicationsManagement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.chkApplicationsManagement.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkApplicationsManagement.UncheckedState.BorderRadius = 0;
+            this.chkApplicationsManagement.UncheckedState.BorderThickness = 0;
+            this.chkApplicationsManagement.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // chkDriversManagement
+            // 
+            this.chkDriversManagement.AutoSize = true;
+            this.chkDriversManagement.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.chkDriversManagement.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkDriversManagement.CheckedState.BorderRadius = 0;
+            this.chkDriversManagement.CheckedState.BorderThickness = 0;
+            this.chkDriversManagement.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkDriversManagement.CheckMarkColor = System.Drawing.Color.Yellow;
+            this.chkDriversManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDriversManagement.Location = new System.Drawing.Point(30, 193);
+            this.chkDriversManagement.Name = "chkDriversManagement";
+            this.chkDriversManagement.Size = new System.Drawing.Size(279, 33);
+            this.chkDriversManagement.TabIndex = 4;
+            this.chkDriversManagement.Text = "Drivers Management";
+            this.chkDriversManagement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.chkDriversManagement.ThreeState = true;
+            this.chkDriversManagement.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDriversManagement.UncheckedState.BorderRadius = 0;
+            this.chkDriversManagement.UncheckedState.BorderThickness = 0;
+            this.chkDriversManagement.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // chkUsersManagement
+            // 
+            this.chkUsersManagement.AllowDrop = true;
+            this.chkUsersManagement.AutoSize = true;
+            this.chkUsersManagement.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkUsersManagement.CheckedState.BorderRadius = 0;
+            this.chkUsersManagement.CheckedState.BorderThickness = 0;
+            this.chkUsersManagement.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkUsersManagement.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.chkUsersManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsersManagement.Location = new System.Drawing.Point(30, 145);
+            this.chkUsersManagement.Name = "chkUsersManagement";
+            this.chkUsersManagement.Size = new System.Drawing.Size(249, 33);
+            this.chkUsersManagement.TabIndex = 3;
+            this.chkUsersManagement.Text = "Users Managment";
+            this.chkUsersManagement.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkUsersManagement.UncheckedState.BorderRadius = 0;
+            this.chkUsersManagement.UncheckedState.BorderThickness = 0;
+            this.chkUsersManagement.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkUsersManagement.UseVisualStyleBackColor = true;
+            this.chkUsersManagement.UseWaitCursor = true;
+            // 
+            // chkAccountSettings
+            // 
+            this.chkAccountSettings.AutoSize = true;
+            this.chkAccountSettings.BackColor = System.Drawing.Color.Transparent;
+            this.chkAccountSettings.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkAccountSettings.CheckedState.BorderRadius = 0;
+            this.chkAccountSettings.CheckedState.BorderThickness = 0;
+            this.chkAccountSettings.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkAccountSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAccountSettings.Location = new System.Drawing.Point(29, 46);
+            this.chkAccountSettings.Name = "chkAccountSettings";
+            this.chkAccountSettings.Size = new System.Drawing.Size(233, 33);
+            this.chkAccountSettings.TabIndex = 2;
+            this.chkAccountSettings.Text = "Account Settings";
+            this.chkAccountSettings.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkAccountSettings.UncheckedState.BorderRadius = 0;
+            this.chkAccountSettings.UncheckedState.BorderThickness = 0;
+            this.chkAccountSettings.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkAccountSettings.UseVisualStyleBackColor = false;
+            // 
+            // chkPeopleManagement
+            // 
+            this.chkPeopleManagement.AutoSize = true;
+            this.chkPeopleManagement.BackColor = System.Drawing.Color.Transparent;
+            this.chkPeopleManagement.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkPeopleManagement.CheckedState.BorderRadius = 0;
+            this.chkPeopleManagement.CheckedState.BorderThickness = 0;
+            this.chkPeopleManagement.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkPeopleManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPeopleManagement.Location = new System.Drawing.Point(29, 94);
+            this.chkPeopleManagement.Name = "chkPeopleManagement";
+            this.chkPeopleManagement.Size = new System.Drawing.Size(280, 33);
+            this.chkPeopleManagement.TabIndex = 1;
+            this.chkPeopleManagement.Text = "People Management";
+            this.chkPeopleManagement.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.chkPeopleManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.chkPeopleManagement.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkPeopleManagement.UncheckedState.BorderRadius = 0;
+            this.chkPeopleManagement.UncheckedState.BorderThickness = 0;
+            this.chkPeopleManagement.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkPeopleManagement.UseMnemonic = false;
+            this.chkPeopleManagement.UseVisualStyleBackColor = false;
+            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,6 +272,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(212, 33);
             this.txtPassword.TabIndex = 120;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating_1);
             // 
             // cbIsActive
             // 
@@ -163,6 +286,7 @@
             this.cbIsActive.TabIndex = 119;
             this.cbIsActive.Text = "Is Active";
             this.cbIsActive.UseVisualStyleBackColor = true;
+            this.cbIsActive.CheckedChanged += new System.EventHandler(this.cbIsActive_CheckedChanged);
             // 
             // pictureBox3
             // 
@@ -310,6 +434,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ucInfoWithFillter1
+            // 
+            this.ucInfoWithFillter1.FilterEnabled = true;
+            this.ucInfoWithFillter1.Location = new System.Drawing.Point(14, 3);
+            this.ucInfoWithFillter1.Name = "ucInfoWithFillter1";
+            this.ucInfoWithFillter1.ShowAddPerson = true;
+            this.ucInfoWithFillter1.Size = new System.Drawing.Size(1210, 650);
+            this.ucInfoWithFillter1.TabIndex = 108;
+            // 
             // AddUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -331,6 +464,8 @@
             this.tcGetPerson.ResumeLayout(false);
             this.tcLoginInfo.ResumeLayout(false);
             this.tcLoginInfo.PerformLayout();
+            this.Permissions.ResumeLayout(false);
+            this.Permissions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -365,5 +500,11 @@
         private System.Windows.Forms.CheckBox cbIsActive;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.GroupBox Permissions;
+        private Guna.UI2.WinForms.Guna2CheckBox chkPeopleManagement;
+        private Guna.UI2.WinForms.Guna2CheckBox chkApplicationsManagement;
+        private Guna.UI2.WinForms.Guna2CheckBox chkDriversManagement;
+        private Guna.UI2.WinForms.Guna2CheckBox chkUsersManagement;
+        private Guna.UI2.WinForms.Guna2CheckBox chkAccountSettings;
     }
 }
