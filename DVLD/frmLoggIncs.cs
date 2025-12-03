@@ -1,5 +1,6 @@
 ﻿using BussenessAccesses;
 using DVLD.Global_Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace DVLD
 {
@@ -35,29 +37,7 @@ namespace DVLD
                 return;
             }
 
-            //_CurrentUser = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-
-            //if (_CurrentUser == null)
-            //{
-            //    MessageBox.Show("Wrong UserName/Password, Enter Correct UserName And Password. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    txtUserName.Focus();
-            //}
-            //else
-            //{
-            //    if (!_CurrentUser.IsActive)
-            //    {
-            //        txtUserName.Focus();
-            //        MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-
-
-            //    clsGlobal.CurrentUser = _CurrentUser;
-            //    this.Hide();
-            //    frmMain frm = new frmMain(this);
-            //    frm.ShowDialog();
-            //    txtUserName.Focus();
-            //}
+ 
 
             clsBussenessUsersManagement user = clsBussenessUsersManagement.FindByUserNamAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 
@@ -67,13 +47,41 @@ namespace DVLD
                 if (cbRememberme.Checked)
                 {
                     //store username and password
-                    clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                    //clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+
+                    // Specify the Registry key and path
+                    string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD_Credintials";
+                    string valueName = "UserName";
+                    string valueData = txtUserName.Text.Trim();
+                    string valueName1 = "Password";
+                    string valueData1 = txtPassword.Text.Trim();
+
+                    try
+                    {
+                        // Write the value to the Registry
+                        Registry.SetValue(keyPath, valueName, valueData ,RegistryValueKind.String);
+                        Registry.SetValue(keyPath, valueName1, valueData1, RegistryValueKind.String);
+
+
+                        //Console.WriteLine($"Value {valueName} successfully written to the Registry.");
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine($"An error occurred: {ex.Message}");
+                    }
 
                 }
                 else
                 {
                     //store empty username and password
-                    clsGlobal.RememberUsernameAndPassword("", "");
+                    //clsGlobal.RememberUsernameAndPassword("", "");
+
+                    // Specify the Registry key and path
+                    string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD_Credintials";
+
+                    Registry.SetValue(keyPath, "UserName", "", RegistryValueKind.String);
+                    Registry.SetValue(keyPath, "Password", "", RegistryValueKind.String);
+
 
                 }
 
@@ -90,7 +98,6 @@ namespace DVLD
                 this.Hide();
                 frmMain frm = new frmMain(this);
                 frm.ShowDialog();
-
 
             }
             else
@@ -132,18 +139,47 @@ namespace DVLD
         private void frmLoggIncs_Load(object sender, EventArgs e)
         {
  
-            string UserName = "", Password = "";
+            //string UserName = "", Password = "";
 
-            if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
+            //if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
+            //{
+            //    txtUserName.Text = UserName;
+            //    txtPassword.Text = Password;
+            //    cbRememberme.Checked = true;
+            //}
+            //else
+            //    cbRememberme.Checked = false;
+
+
+            // Specify the Registry key and path
+            string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD_Credintials";
+            string valueName = "UserName";
+            string valueName1 = "Password";
+
+
+            try
             {
-                txtUserName.Text = UserName;
-                txtPassword.Text = Password;
-                cbRememberme.Checked = true;
-            }
-            else
-                cbRememberme.Checked = false;
-        }
+                // Read the value from the Registry
+                string value = Registry.GetValue(keyPath, valueName, "") as string;
+                string value1 = Registry.GetValue(keyPath, valueName1, "") as string;
 
+
+                if (value != "" && value1 != "")
+                {
+                    txtUserName.Text = value;
+                    txtPassword.Text = value1;
+                    cbRememberme.Checked = true;
+                }
+                else
+                {
+                    cbRememberme.Checked = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
       
     }
 }
