@@ -3,12 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\alnoo\\onedrive\\documents\\desktop\\dvld\\dvld\\frmloggincs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:frmloggincs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\alnoo\\onedrive\\documents\\desktop\\dvld\\dvld\\applications\\internationallicense\\frmlistinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:applications\\internationallicense\\frmlistinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\frmloggincs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:frmloggincs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9ADB5B75-4133-4B57-AD7C-E5EF8802F7A1}|..\\BussenessAccesses\\BussenessAccesses.csproj|c:\\users\\alnoo\\onedrive\\documents\\desktop\\dvld\\bussenessaccesses\\clsbuessenessinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{922A31FA-E142-48A7-BA2C-DEB8CFEDF54C}|..\\DataAccesses\\DataAccesses.csproj|c:\\users\\alnoo\\onedrive\\documents\\desktop\\dvld\\dataaccesses\\clsdatainternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|c:\\users\\alnoo\\onedrive\\documents\\desktop\\dvld\\dvld\\applications\\internationallicense\\frmlistinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6A7D8D63-99D1-4A4C-A6C0-78208DBDA1AE}|DVLD.csproj|solutionrelative:applications\\internationallicense\\frmlistinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +24,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsDataInternationalLicenses.cs",
+              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DataAccesses\\clsDataInternationalLicenses.cs",
+              "RelativeDocumentMoniker": "..\\DataAccesses\\clsDataInternationalLicenses.cs",
+              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DataAccesses\\clsDataInternationalLicenses.cs",
+              "RelativeToolTip": "..\\DataAccesses\\clsDataInternationalLicenses.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2026-01-12T20:43:44.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsBuessenessInternationalLicenses.cs",
+              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\BussenessAccesses\\clsBuessenessInternationalLicenses.cs",
+              "RelativeDocumentMoniker": "..\\BussenessAccesses\\clsBuessenessInternationalLicenses.cs",
+              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\BussenessAccesses\\clsBuessenessInternationalLicenses.cs",
+              "RelativeToolTip": "..\\BussenessAccesses\\clsBuessenessInternationalLicenses.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAuwK8AAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2026-01-12T20:42:38.784Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -27,26 +59,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmLoggIncs.cs",
-              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\frmLoggIncs.cs",
-              "RelativeDocumentMoniker": "frmLoggIncs.cs",
-              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\frmLoggIncs.cs",
-              "RelativeToolTip": "frmLoggIncs.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB4AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T09:54:12.666Z",
+              "Title": "frmListInternationalLicenses.cs",
+              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\Applications\\InternationalLicense\\frmListInternationalLicenses.cs",
+              "RelativeDocumentMoniker": "Applications\\InternationalLicense\\frmListInternationalLicenses.cs",
+              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\Applications\\InternationalLicense\\frmListInternationalLicenses.cs*",
+              "RelativeToolTip": "Applications\\InternationalLicense\\frmListInternationalLicenses.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2026-01-12T20:36:50.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLoggIncs.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\frmLoggIncs.cs",
-              "RelativeDocumentMoniker": "frmLoggIncs.cs",
-              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\frmLoggIncs.cs [Design]",
-              "RelativeToolTip": "frmLoggIncs.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T09:54:07.411Z",
+              "DocumentIndex": 3,
+              "Title": "frmListInternationalLicenses.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\Applications\\InternationalLicense\\frmListInternationalLicenses.cs",
+              "RelativeDocumentMoniker": "Applications\\InternationalLicense\\frmListInternationalLicenses.cs",
+              "ToolTip": "C:\\Users\\alnoo\\OneDrive\\Documents\\Desktop\\DVLD\\DVLD\\Applications\\InternationalLicense\\frmListInternationalLicenses.cs [Design]*",
+              "RelativeToolTip": "Applications\\InternationalLicense\\frmListInternationalLicenses.cs [Design]*",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2026-01-12T20:36:41.682Z",
               "EditorCaption": " [Design]"
             }
           ]

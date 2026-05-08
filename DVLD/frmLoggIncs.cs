@@ -138,20 +138,6 @@ namespace DVLD
 
         private void frmLoggIncs_Load(object sender, EventArgs e)
         {
- 
-            //string UserName = "", Password = "";
-
-            //if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
-            //{
-            //    txtUserName.Text = UserName;
-            //    txtPassword.Text = Password;
-            //    cbRememberme.Checked = true;
-            //}
-            //else
-            //    cbRememberme.Checked = false;
-
-
-            // Specify the Registry key and path
             string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD_Credintials";
             string valueName = "UserName";
             string valueName1 = "Password";

@@ -144,7 +144,7 @@ namespace DVLD.Drivers
 
         private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int LicenseID = (int)dgvDrivers.CurrentRow.Cells[3].Value;
+            //int LicenseID = (int)dgvDrivers.CurrentRow.Cells[3].Value;
 
             //frmAddNewInternationalLicense frm = new frmAddNewInternationalLicense(LicenseID);
             //frm.ShowDialog();
